@@ -1,5 +1,32 @@
 $.fn.clearValidation = function(){var v = $(this).validate();$('[name]',this).each(function(){v.successList.push(this);v.showErrors();});v.resetForm();v.reset();};
 
+function previewPicture(){
+  var preview = document.querySelector('#signature img');
+  var file    = document.querySelector('input[type=file]').files[0];
+  var reader  = new FileReader();
+
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+
+  $('#signature img').parents('td').css('width', '70px');
+  $('#signature img').css("display", "block");
+}
+
+function copyText(element) {
+  var text = document.getElementById(element);
+  var selection = window.getSelection();
+  var range = document.createRange();
+  range.selectNodeContents(text);
+  selection.removeAllRanges();
+  selection.addRange(range);
+  document.execCommand('copy');
+}
+
 $(function(){
 	var form = $('form');
 
@@ -14,12 +41,12 @@ $(function(){
 	  		}
 
 	  		//if both email and phone are set, then add a pipe
-	  		if($('.field.email').text() && $('.field.phone').text() && !$('.mid').text()){
-	  			$('.mid').text(" | ");
-	  		}
-	  		else {
-	  			$('.mid').text("");
-	  		}
+	  		if(this.id == "email" || this.id == "phone"){
+		  		if($('.field.email').text() && $('.field.phone').text() && !$('.mid').text())
+		  			$('.mid').text(" | ");
+		  		else
+		  			$('.mid').text("");
+		  	}
 
 	  		if($(this).val() == ""){
 	  			$(this).clearValidation();
@@ -50,7 +77,8 @@ $(function(){
 			}
 		},
 		messages: {
-			url: "Please enter a valid URL, starting with http://"
+			url: "Please enter a valid URL, starting with http://",
+			phone: "Please specify a valid Phone Number, starting with the area code"
 		}
 	});
 });

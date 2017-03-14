@@ -20,12 +20,6 @@
     <![endif]-->
 
     <style>
-			.form-inline .form-control {
-				display: inline-block;
-				width: 100%;
-				vertical-align: middle;
-			}
-
 			h2 {
 				font-size: 140%;
 			}
@@ -33,65 +27,104 @@
 			.required {
 				text-transform: uppercase;
 			}
+
+			img.logo {
+				display: inline;
+				padding: 0 1em 1em 0;
+			}
+
+			.page-header h1{
+				display: inline;
+			}
+
+			label.error {
+				color: #a94442;
+			}
 		</style>
   </head>
   <body>
 		<div class="container">
 			<div class="page-header">
+				<img class="logo" src="//static.lanecc.net/logo.png" alt="">
 				<h1>Signature Generator</h1>
 			</div>
 			<p class="lead">After entering your information below, copy and paste the generated signature into Groupwise</p>
 			<div class="row">
 				<div class="col-md-6">
 			  	<h2 class="sr-only">Enter your information below</h2>
-					<form class="form-inline clearfix">
-						<div class="form-group col-md-11">
-							<label for="name">Name <small class="required text-danger">required</small></label><br/>
-							<input type="text" class="form-control" id="name" name="name" required>
+					<form class="form-horizontal clearfix">
+						<div class="form-group">
+							<label for="name" class="col-md-3">Name <small class="required text-danger">required</small></label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="name" name="name" required>
+							</div>
 						</div>
-						<div class="form-group col-md-11">
-							<label for="title">Job Title <small class="required text-danger">required</small></label><br/>
-							<input type="text" class="form-control" class="title" id="title" required>
+						<div class="form-group">
+							<label for="title" class="col-md-3">Job Title <small class="required text-danger">required</small></label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" name="title" id="title" required>
+							</div>
 						</div>
-						<div class="form-group col-md-11">
-							<label for="department">Department <small class="required text-danger">required</small></label><br/>
-							<input type="text" class="form-control" class="department" id="department" required>
+						<div class="form-group">
+							<label for="department" class="col-md-3">Department <small class="required text-danger">required</small></label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" class="department" id="department" required>
+							</div>
 						</div>
-						<div class="form-group col-md-11">
-							<label for="email">Email</label><br/>
-							<input type="text" class="form-control" id="email" name="email">
+						<div class="form-group">
+							<label for="email" class="col-md-3">Email</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="email" name="email">
+							</div>
 						</div>
-						<div class="form-group col-md-11">
-							<label for="phone">Phone Number</label><br/>
-							<input type="text" class="form-control" id="phone" name="phone">
+						<div class="form-group">
+							<label for="phone" class="col-md-3">Phone Number</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="phone" name="phone">
+							</div>
 						</div>
-						<hr class="col-md-11">
-						<div class="form-group col-md-11">
-							<label for="company">Company Name</label><br/>
-							<input type="text" class="form-control" name="company" id="company" value="Lane Community College">
+						<hr>
+						<div class="form-group">
+							<label for="company" class="col-md-3">Company Name</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" name="business" id="business" value="Lane Community College">
+							</div>
 						</div>
-						<div class="form-group col-md-11">
-							<label for="address">Company Address</label><br/>
-							<input type="text" class="form-control" name="address" id="address" value="4000 E. 30th Avenue, Eugene, OR 97405">
+						<div class="form-group">
+							<label for="address" class="col-md-3">Company Address</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" name="address" id="address" value="4000 E. 30th Avenue, Eugene, OR 97405">
+							</div>
 						</div>
-						<div class="form-group col-md-11">
-							<label for="url">Company URL</label><br/>
-							<input type="text" class="form-control" name="url" id="url" value="http://www.lanecc.edu">
-						</div>					
+						<div class="form-group">
+							<label for="url" class="col-md-3">Company URL</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" name="url" id="url" value="http://www.lanecc.edu">
+							</div>
+						</div>
+						<hr>
+						<div class="form-group">
+							<label for="picture" class="col-md-3">Picture</label>
+							<div class="col-md-8">
+								<input type="file" id="picture" onchange="previewPicture()">
+								<p class="help-block">If you choose to use a picture, please choose a professional looking head shot, to help students recognize who you are. Additionally, please make sure that it is <strong>70px tall by 60px high</strong></p>
+							</div>
+							
+						</div>				
 
 					</form>
 				</div>
 				<div class="col-md-6">
 					<div class="panel panel-default">
 						<h2 class="sr-only">Copy your signature from below</h2>
-					  <div class="panel-body">
+					  <div id="signature" class="panel-body">
 					    <table border="0" style="border-collapse:collapse;border:0;color:#000000;width:100%" cellpadding="0" cellspacing="0">
 								<tr>
-									<td>
-										<img src="" height="80px" width="60px" alt ="">
+									<td style="padding-top:8px;width:0">
+										<img src="" height="70px" width="60px" alt ="" style="display:none">
 									</td>
 									<td>
-										<p style="font-family: Helvetica, Arial, sans-serif; font-size: 11pt; line-height: 18pt; color: rgb(33, 33, 33); margin-bottom: 10px;margin-top: 20px;">
+										<p style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 24px; color: rgb(33, 33, 33); margin-bottom: 10px;margin-top: 20px;">
 											<span style="font-size: 15pt; font-weight: bold; color: #0b223f; display: inline;" class="field name">Your Name</span><br>
 											<span style="color: #565656; display: inline;" class="field title">Your Job Title</span><br>
 											<span style="color: #565656; display: inline;" class="field department">Your Department</span><br>
@@ -103,7 +136,7 @@
 								</tr>
 								<tr>
 									<td colspan="2">
-										<p style="font-family: Helvetica, Arial, sans-serif; font-size: 11pt; line-height: 18pt; color: rgb(33, 33, 33); margin-bottom: 10px;margin-top: 20px;">
+										<p style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 24px; color: rgb(33, 33, 33); margin-bottom: 10px;margin-top: 14px;">
 											<span style="font-weight: bold; color: #0b223f; display: inline;" class="field business">Lane Community College</span><br>
 											<span style="color: #0b223f; display: inline;" class="field address">4000 E. 30th Avenue, Eugene, OR 97405</span><br>
 											<a href="http://www.lanecc.edu" style="color: #3a87bc; text-decoration: none; display: inline;" class="field url">http://www.lanecc.edu</a>
@@ -113,6 +146,7 @@
 							</table>
 					  </div>
 					</div>
+					<button class="btn btn-primary" onclick="copyText('signature')">Copy to Clipboard</button>
 				</div>
 			</div>
   	</div>
