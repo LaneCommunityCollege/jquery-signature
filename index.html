@@ -7,11 +7,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Lane Signature Generator</title>
 
-    <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="icon" href="//static.lanecc.net/favicon.ico">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,14 +18,107 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+			.form-inline .form-control {
+				display: inline-block;
+				width: 100%;
+				vertical-align: middle;
+			}
+
+			h2 {
+				font-size: 140%;
+			}
+
+			.required {
+				text-transform: uppercase;
+			}
+		</style>
   </head>
   <body>
+		<div class="container">
+			<div class="page-header">
+				<h1>Signature Generator</h1>
+			</div>
+			<p class="lead">After entering your information below, copy and paste the generated signature into Groupwise</p>
+			<div class="row">
+				<div class="col-md-6">
+			  	<h2 class="sr-only">Enter your information below</h2>
+					<form class="form-inline clearfix">
+						<div class="form-group col-md-11">
+							<label for="name">Name <small class="required text-danger">required</small></label><br/>
+							<input type="text" class="form-control" id="name" name="name" required>
+						</div>
+						<div class="form-group col-md-11">
+							<label for="title">Job Title <small class="required text-danger">required</small></label><br/>
+							<input type="text" class="form-control" class="title" required>
+						</div>
+						<div class="form-group col-md-11">
+							<label for="department">Department <small class="required text-danger">required</small></label><br/>
+							<input type="text" class="form-control" class="department" required>
+						</div>
+						<div class="form-group col-md-11">
+							<label for="email">Email</label><br/>
+							<input type="text" class="form-control" id="email" name="email">
+						</div>
+						<div class="form-group col-md-11">
+							<label for="phone">Phone Number</label><br/>
+							<input type="text" class="form-control" id="phone" name="phone">
+						</div>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<h2 class="sr-only">Copy your signature from below</h2>
+					  <div class="panel-body">
+					    <table border="0" style="border-collapse:collapse;border:0;color:#000000;width:100%" cellpadding="0" cellspacing="0">
+								<tr>
+									<td>
+										<img src="" height="80px" width="60px" alt ="">
+									</td>
+									<td>
+										<p style="font-family: Helvetica, Arial, sans-serif; font-size: 11pt; line-height: 18pt; color: rgb(33, 33, 33); margin-bottom: 10px;margin-top: 20px;">
+											<span style="font-size: 15pt; font-weight: bold; color: #0b223f; display: inline;" class="field name">
+												Your Name
+											</span><br>
+											<span style="color: #565656; display: inline;" class="field title">
+												Your Job Title
+											</span><br>
+											<span style="color: #565656; display: inline;" class="field department">
+												Your Department
+											</span><br>
+											<span style="color: #0b223f !important; display: inline;" class="field email"></span>
+											<span class="mid"></span>
+											<span style="color: #0b223f !important; display: inline;" class="field phone"></span>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<p style="font-family: Helvetica, Arial, sans-serif; font-size: 11pt; line-height: 18pt; color: rgb(33, 33, 33); margin-bottom: 10px;margin-top: 20px;">
+											<span style="font-weight: bold; color: #0b223f; display: inline;">{{user.company}}</span><br>
+											<span style="color: #0b223f; display: inline;">
+												{{user.address}}
+											</span><br>
+											<a href="{{user.url}}" style="color: #3a87bc; text-decoration: none; display: inline;">{{user.url}}</a>
+										</p>
+									</td>
+								</tr>
+							</table>
+					  </div>
+					</div>
+				</div>
+			</div>
+  	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+		<script src="sig.js"></script>
     <script src="//static.lanecc.net/mm/lmm.min.js"></script>
   </body>
 </html>
