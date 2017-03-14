@@ -13,6 +13,7 @@ function previewPicture(){
     reader.readAsDataURL(file);
   }
 
+  $('#btn-txt').text('Picture added!');
   $('#signature img').parents('td').css('width', '70px');
   $('#signature img').css("display", "block");
 }
@@ -31,6 +32,16 @@ $(function(){
 	var form = $('form');
 
 	$(document).ready(function(){
+		$('#reset').on('click', function(e){
+			e.preventDefault();
+			$('#picture').val("");
+			$('#btn-txt').text('Add a picture');
+
+			$('#signature img').parents('td').css('width', '0');
+			$('#signature img').attr("src", "");
+			$('#signature img').css("display", "none");
+		})
+
 	  $('input').on('keyup paste', function(){
 	  	if($(this).valid() || $(this).val() == ""){
 	  		var target = "." + this.id + ".field";

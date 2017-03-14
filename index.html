@@ -40,6 +40,7 @@
 			label.error {
 				color: #a94442;
 			}
+
 		</style>
   </head>
   <body>
@@ -104,14 +105,20 @@
 						</div>
 						<hr>
 						<div class="form-group">
-							<label for="picture" class="col-md-3">Picture</label>
-							<div class="col-md-8">
-								<input type="file" id="picture" onchange="previewPicture()">
-								<p class="help-block">If you choose to use a picture, please choose a professional looking head shot, to help students recognize who you are. Additionally, please make sure that it is <strong>70px tall by 60px high</strong></p>
-							</div>
-							
-						</div>				
-
+						<span class="control-label col-md-3" style="font-weight:bold">Picture</span>
+						<div class="col-md-8">
+							<label class="btn btn-primary" for="picture">
+							    <input id="picture" type="file" style="display:none;" onchange="previewPicture();">
+							    <span id='btn-txt'>Add a picture</span>
+							</label>
+							<button id="reset" class="btn btn-danger">
+								<i class="glyphicon glyphicon-remove">
+									<span class="sr-only">Reset File Field</span>
+								</i>
+							</button>
+							<p class="help-block">If you choose to use a picture, please choose a professional looking head shot, to help students recognize who you are. Additionally, please make sure that it is <strong>70px tall by 60px high</strong></p>
+						</div>
+						</div>
 					</form>
 				</div>
 				<div class="col-md-6">
