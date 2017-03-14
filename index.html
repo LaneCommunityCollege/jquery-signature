@@ -51,11 +51,11 @@
 						</div>
 						<div class="form-group col-md-11">
 							<label for="title">Job Title <small class="required text-danger">required</small></label><br/>
-							<input type="text" class="form-control" class="title" required>
+							<input type="text" class="form-control" class="title" id="title" required>
 						</div>
 						<div class="form-group col-md-11">
 							<label for="department">Department <small class="required text-danger">required</small></label><br/>
-							<input type="text" class="form-control" class="department" required>
+							<input type="text" class="form-control" class="department" id="department" required>
 						</div>
 						<div class="form-group col-md-11">
 							<label for="email">Email</label><br/>
@@ -65,6 +65,20 @@
 							<label for="phone">Phone Number</label><br/>
 							<input type="text" class="form-control" id="phone" name="phone">
 						</div>
+						<hr class="col-md-11">
+						<div class="form-group col-md-11">
+							<label for="company">Company Name</label><br/>
+							<input type="text" class="form-control" name="company" id="company" value="Lane Community College">
+						</div>
+						<div class="form-group col-md-11">
+							<label for="address">Company Address</label><br/>
+							<input type="text" class="form-control" name="address" id="address" value="4000 E. 30th Avenue, Eugene, OR 97405">
+						</div>
+						<div class="form-group col-md-11">
+							<label for="url">Company URL</label><br/>
+							<input type="text" class="form-control" name="url" id="url" value="http://www.lanecc.edu">
+						</div>					
+
 					</form>
 				</div>
 				<div class="col-md-6">
@@ -96,11 +110,9 @@
 								<tr>
 									<td colspan="2">
 										<p style="font-family: Helvetica, Arial, sans-serif; font-size: 11pt; line-height: 18pt; color: rgb(33, 33, 33); margin-bottom: 10px;margin-top: 20px;">
-											<span style="font-weight: bold; color: #0b223f; display: inline;">{{user.company}}</span><br>
-											<span style="color: #0b223f; display: inline;">
-												{{user.address}}
-											</span><br>
-											<a href="{{user.url}}" style="color: #3a87bc; text-decoration: none; display: inline;">{{user.url}}</a>
+											<span style="font-weight: bold; color: #0b223f; display: inline;" class="field business">Lane Community College</span><br>
+											<span style="color: #0b223f; display: inline;" class="field address">4000 E. 30th Avenue, Eugene, OR 97405</span><br>
+											<a href="http://www.lanecc.edu" style="color: #3a87bc; text-decoration: none; display: inline;" class="field url">http://www.lanecc.edu</a>
 										</p>
 									</td>
 								</tr>
