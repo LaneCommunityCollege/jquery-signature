@@ -42,7 +42,7 @@ $(function(){
 			$('#signature img').css("display", "none");
 		})
 
-	  $('input').on('keyup paste', function(){
+	  $('input').on('keyup paste blur', function(){
 	  	if($(this).valid() || $(this).val() == ""){
 	  		var target = "." + this.id + ".field";
 	  		$(target).text($(this).val());
