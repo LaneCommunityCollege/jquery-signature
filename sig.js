@@ -29,67 +29,71 @@ function copyText(element) {
 }
 
 $(function(){
-	var form = $('form');
+  var form = $('form');
 
-	$(document).ready(function(){
-		$('#reset').on('click', function(e){
-			e.preventDefault();
-			$('#picture').val("");
-			$('#btn-txt').text('Add a picture');
+  $(document).ready(function(){
+    $('#reset').on('click', function(e){
+      e.preventDefault();
+      $('#picture').val("");
+      $('#btn-txt').text('Add a picture');
 
-			$('#signature img').parents('td').css('width', '0');
-			$('#signature img').attr("src", "");
-			$('#signature img').css("display", "none");
-		})
+      $('#signature img').parents('td').css('width', '0');
+      $('#signature img').attr("src", "");
+      $('#signature img').css("display", "none");
+    })
 
-	  $('input').on('keyup paste blur', function(){
-	  	if($(this).valid() || $(this).val() == ""){
-	  		var target = "." + this.id + ".field";
-	  		$(target).text($(this).val());
+    //ideally we should add blur here, so that when you select an existing answer and press tab
+    //it works, but that has the side effect of running this multiple times, and wiping out the
+    //pipe
+    $('input').one('keyup paste', function(){
+      if($(this).valid() || $(this).val() == ""){
+        var target = "." + this.id + ".field";
+        $(target).text($(this).val());
 
-	  		if(this.id == "url"){
-	  			$('.field.url').attr('href', $(this).val())
-	  		}
+        if(this.id == "url"){
+          $('.field.url').attr('href', $(this).val())
+        }
 
-	  		//if both email and phone are set, then add a pipe
-	  		if(this.id == "email" || this.id == "phone"){
-		  		if($('.field.email').text() && $('.field.phone').text() && !$('.mid').text())
-		  			$('.mid').text(" | ");
-		  		else
-		  			$('.mid').text("");
-		  	}
+        //if both email and phone are set, then add a pipe
+        if(this.id == "email" || this.id == "phone"){
+          console.log($('.field.email').text() + $('.field.phone').text() + !$('.mid').text())
+          if($('.field.email').text() && $('.field.phone').text() && !$('.mid').text())
+            $('.mid').text(" | ");
+          else
+            $('.mid').text("");
+        }
 
-	  		if($(this).val() == ""){
-	  			$(this).clearValidation();
-	  		}
-	  	}
-	  });
-	});
+        if($(this).val() == ""){
+          $(this).clearValidation();
+        }
+      }
+    });
+  });
 
-	$.validator.addMethod("emailRegex", function(value, element, regexpr) { 
-	   if(value.length > 0)         
-    	return regexpr.test(value);
+  $.validator.addMethod("emailRegex", function(value, element, regexpr) { 
+     if(value.length > 0)         
+      return regexpr.test(value);
      return true;
-	}, "Be sure to use your Lane email address");
+  }, "Be sure to use your Lane email address");
 
-	$("form").validate({
-		rules: {
-			name: "required",
-			email: {
-				email: true,
-				emailRegex: /[a-zA-Z]+@lanecc.edu/,
-				required: false
-			},
-			phone: {
-				phoneUS: true
-			},
-			url: {
-				url: true
-			}
-		},
-		messages: {
-			url: "Please enter a valid URL, starting with http://",
-			phone: "Please specify a valid Phone Number, starting with the area code"
-		}
-	});
+  $("form").validate({
+    rules: {
+      name: "required",
+      email: {
+        email: true,
+        emailRegex: /[a-zA-Z]+@lanecc.edu/,
+        required: false
+      },
+      phone: {
+        phoneUS: true
+      },
+      url: {
+        url: true
+      }
+    },
+    messages: {
+      url: "Please enter a valid URL, starting with http://",
+      phone: "Please specify a valid Phone Number, starting with the area code"
+    }
+  });
 });
