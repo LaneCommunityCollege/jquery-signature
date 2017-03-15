@@ -42,10 +42,7 @@ $(function(){
       $('#signature img').css("display", "none");
     })
 
-    //ideally we should add blur here, so that when you select an existing answer and press tab
-    //it works, but that has the side effect of running this multiple times, and wiping out the
-    //pipe
-    $('input').one('keyup paste', function(){
+    $('input').on('keyup paste blur', function(){
       if($(this).valid() || $(this).val() == ""){
         var target = "." + this.id + ".field";
         $(target).text($(this).val());
@@ -55,13 +52,10 @@ $(function(){
         }
 
         //if both email and phone are set, then add a pipe
-        if(this.id == "email" || this.id == "phone"){
-          console.log($('.field.email').text() + $('.field.phone').text() + !$('.mid').text())
-          if($('.field.email').text() && $('.field.phone').text() && !$('.mid').text())
-            $('.mid').text(" | ");
-          else
-            $('.mid').text("");
-        }
+        if($('.field.email').text() && $('.field.phone').text())
+            $('.mid').show();
+        else
+          $('.mid').hide();
 
         if($(this).val() == ""){
           $(this).clearValidation();
