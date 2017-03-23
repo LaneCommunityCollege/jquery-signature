@@ -58,11 +58,28 @@ $(function(){
             $('.field.department > a').contents().unwrap();
         }
 
-        //if both email and phone are set, then add a pipe
-        if($('.field.email').text() && $('.field.phone').text())
-            $('.mid').show();
-        else
+        //Set up the pipe between phone numbers
+        if($('.field.phone').text() && $('.field.mobile').text() && $('.field.fax').text()){
+          $('.mid, .mid2, .icon').show();
+        }
+        else if($('.field.phone').text() && $('.field.mobile').text()){
+          $('.mid').show();
+          $('.mid2').hide();
+          $('.icon.phone, .icon.mobile').show();
+        }
+        else if($('.field.phone').text() && $('.field.fax').text()){
+          $('.mid').show();
+          $('.mid2').hide();
+          $('.icon.phone, .icon.fax').show();
+        }
+        else if($('.field.mobile').text() && $('.field.fax').text()){
+          $('.mid2').show();
           $('.mid').hide();
+          $('.icon.mobile, .icon.fax').show();
+        }
+        else{
+          $('.mid, mid2, .icon').hide();
+        }
 
         if($(this).val() == ""){
           $(this).clearValidation();
@@ -86,6 +103,12 @@ $(function(){
         required: false
       },
       phone: {
+        phoneUS: true
+      },
+      mobile: {
+        phoneUS: true
+      },
+      fax: {
         phoneUS: true
       },
       url: {
