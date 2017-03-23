@@ -27,6 +27,8 @@ function copyText(element) {
   selection.addRange(range);
   document.execCommand('copy');
 }
+ 
+
 
 $(function(){
   var form = $('form');
@@ -48,7 +50,12 @@ $(function(){
         $(target).text($(this).val());
 
         if(this.id == "url"){
-          $('.field.url').attr('href', $(this).val())
+          if(this.value && $('.field.department a').length)
+            $('.field.department a').attr('href', $(this).val());
+          else if (this.value)
+            $('.field.department').wrapInner("<a href='" + $(this).val() + "' style='color: #3a87bc; text-decoration: none; display: inline;'></a>");
+          else
+            $('.field.department > a').contents().unwrap();
         }
 
         //if both email and phone are set, then add a pipe
