@@ -14,7 +14,7 @@ function previewPicture(){
   }
 
   $('#btn-txt').text('Picture added!');
-  $('#signature img').parents('td').css('width', '70px');
+  $('#signature img').parents('td').css('width', '85px');
   $('#signature img').css("display", "block");
 }
 
