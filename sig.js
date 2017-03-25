@@ -1,9 +1,8 @@
 $.fn.clearValidation = function(){var v = $(this).validate();$('[name]',this).each(function(){v.successList.push(this);v.showErrors();});v.resetForm();v.reset();};
 
 function resizePic(){
-  var h = $('tbody').height();
-  $('#signature img').attr('height', h + "px").attr('width', h + "px");
-  $('#signature img').parents('td').css('width', h + Math.floor(h/9) + "px");
+  var h = $('#signature p').height();
+  $('#signature img').attr('height', h + "px").attr('width', h + "px").css('margin-right', Math.floor(h/9) + "px");
 }
 
 function previewPicture(){
@@ -21,7 +20,7 @@ function previewPicture(){
 
   $('#btn-txt').text('Picture added!');
   resizePic();
-  $('#signature img').css("display", "block");
+  $('#signature img').css("display", "inline-block");
 }
 
 function copyText(element) {
@@ -43,7 +42,7 @@ $(function(){
       $('#picture').val("");
       $('#btn-txt').text('Add a picture');
 
-      $('#signature img').parents('td').css('width', '0');
+      $('#signature img').css('padding-right', '0');
       $('#signature img').attr("src", "").removeAttr("height width");
       $('#signature img').css("display", "none");
     })
@@ -52,6 +51,11 @@ $(function(){
       if($(this).valid() || $(this).val() == ""){
         var target = "." + this.id + ".field";
         
+        if($(this).val() == "" && !$(this).hasClass('notshown'))
+          $(target).parents('span').hide();
+        else
+          $(target).parents('span').show();
+
         //if we're adding text that wasn't previously there, or our new value is empty
         //resize the picture
         //TODO if we're working with a hidden field, this logic doesn't work.
@@ -63,6 +67,7 @@ $(function(){
         if(resize){
           resizePic();
         }
+
 
         if(this.id == "url"){
           if(this.value && $('.field.department a').length)
