@@ -1,0 +1,20 @@
+h2 {
+  font-size: 140%;
+}
+
+.required {
+  text-transform: uppercase;
+}
+
+img.logo {
+  display: inline;
+  padding: 0 1em 1em 0;
+}
+
+.page-header h1{
+  display: inline;
+}
+
+label.error {
+  color: #a94442;
+}

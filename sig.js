@@ -1,23 +1,29 @@
 $.fn.clearValidation = function(){var v = $(this).validate();$('[name]',this).each(function(){v.successList.push(this);v.showErrors();});v.resetForm();v.reset();};
 
 function resizePic(){
-  var h = $('#signature p').height();
-  $('#signature img').attr('height', h + "px").attr('width', h + "px").css('margin-right', Math.floor(h/9) + "px");
+  var h = $('#signature p:first').height();
+  $('#signature img:first').attr('height', h + "px").attr('width', h + "px").css('margin-right', Math.floor(h/9) + "px");
 }
 
 function previewPicture(){
   var preview = document.querySelector('#signature img');
+  var hiddenPic = document.querySelector('img.hidden-pic');
+
   var file    = document.querySelector('input[type=file]').files[0];
   var reader  = new FileReader();
 
   reader.addEventListener("load", function () {
     preview.src = reader.result;
+    hiddenPic.src = reader.result;
   }, false);
 
   if (file) {
     reader.readAsDataURL(file);
   }
 
+  if(hiddenPic.height != "80" || hiddenPic.width != "80"){
+
+  }
   $('#btn-txt').text('Picture added!');
   resizePic();
   $('#signature img').css("display", "inline-block");
@@ -47,7 +53,19 @@ $(function(){
       $('#signature img').css("display", "none");
     })
 
-    $('input').on('keyup paste blur', function(){
+    $('input[type=checkbox]').on('click', function(){
+      $currentField = $(this).parents('.input-group').find('input[type=text]');
+      if($currentField.is(":visible")){
+        $currentField.hide();
+        $('#signature a.' + $currentField.attr('id')).remove();
+      }
+      else {
+        $currentField.show();
+        $('.social').append($('.hidden .' + $currentField.attr('id')).clone());
+      }
+    });
+
+    $('input[type=text]').on('keyup paste blur', function(){
       if($(this).valid() || $(this).val() == ""){
         var target = "." + this.id + ".field";
         
@@ -68,7 +86,6 @@ $(function(){
           resizePic();
         }
 
-
         if(this.id == "url"){
           if(this.value && $('.field.department a').length)
             $('.field.department a').attr('href', $(this).val());
@@ -76,6 +93,10 @@ $(function(){
             $('.field.department').wrapInner("<a href='" + $(this).val() + "' style='color: #3a87bc; text-decoration: none; display: inline;'></a>");
           else
             $('.field.department > a').contents().unwrap();
+        }
+        else if($(this).parents('.social-media').length){
+          $('#signature .' + $(this).attr('id')).attr('href', $(this).val());
+          $('.hidden .' + $(this).attr('id')).attr('href', $(this).val());
         }
 
         //Set up the pipe between phone numbers
