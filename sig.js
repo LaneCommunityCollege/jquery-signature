@@ -1,34 +1,5 @@
 $.fn.clearValidation = function(){var v = $(this).validate();$('[name]',this).each(function(){v.successList.push(this);v.showErrors();});v.resetForm();v.reset();};
 
-function resizePic(){
-  var h = $('#signature p:first').height();
-  $('#signature img:first').attr('height', h + "px").attr('width', h + "px").css('margin-right', Math.floor(h/9) + "px");
-}
-
-function previewPicture(){
-  var preview = document.querySelector('#signature img');
-  var hiddenPic = document.querySelector('img.hidden-pic');
-
-  var file    = document.querySelector('input[type=file]').files[0];
-  var reader  = new FileReader();
-
-  reader.addEventListener("load", function () {
-    preview.src = reader.result;
-    hiddenPic.src = reader.result;
-  }, false);
-
-  if (file) {
-    reader.readAsDataURL(file);
-  }
-
-  if(hiddenPic.height != "80" || hiddenPic.width != "80"){
-
-  }
-  $('#btn-txt').text('Picture added!');
-  resizePic();
-  $('#signature img').css("display", "inline-block");
-}
-
 function copyText(element) {
   var text = document.getElementById(element);
   var selection = window.getSelection();
@@ -43,16 +14,6 @@ $(function(){
   var form = $('form');
 
   $(document).ready(function(){
-    $('#reset').on('click', function(e){
-      e.preventDefault();
-      $('#picture').val("");
-      $('#btn-txt').text('Add a picture');
-
-      $('#signature img').css('padding-right', '0');
-      $('#signature img').attr("src", "").removeAttr("height width");
-      $('#signature img').css("display", "none");
-    })
-
     $('input[type=checkbox]').on('click', function(){
       $currentField = $(this).parents('.input-group').find('input[type=text]');
       if($currentField.is(":visible")){
@@ -75,16 +36,12 @@ $(function(){
           $(target).parents('span').show();
 
         //if we're adding text that wasn't previously there, or our new value is empty
-        //resize the picture
         //TODO if we're working with a hidden field, this logic doesn't work.
         var resize = false;
         if($(this).val() != $(target).text() && !$(this).hasClass('notshown') && ($(target).text() == "" || $(this).val() == "")){
           resize = true;
         }
         $(target).text($(this).val());
-        if(resize){
-          resizePic();
-        }
 
         if(this.id == "url"){
           if(this.value && $('.field.department a').length)
