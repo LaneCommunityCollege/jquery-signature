@@ -28,7 +28,7 @@
 			<div class="row">
 				<div class="col-md-6">
 			  	<h2 class="sr-only">Enter your information below</h2>
-					<form class="form-horizontal clearfix">
+					<form class="form-horizontal clearfix" id="siginfo">
 						<div class="form-group">
 							<label for="name" class="col-md-3">Name <small class="required text-danger">required</small></label>
 							<div class="col-md-8">
@@ -120,7 +120,6 @@
 						<h2 class="sr-only">Copy your signature from below</h2>
 					  <div id="signature" class="panel-body">
               <div style="margin-top: 10px;margin-bottom:10px; width:100%;">
-  							<img src="" alt ="" style="display:none;vertical-align: top">
                 <p style="color:#000000;font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; color: rgb(33, 33, 33); display:inline-block;margin:0">
                   <span style="font-size: 20px; font-weight: bold; color: #0b223f; display: inline;" class="field name">Your Name</span><br>
                   <span style="display:none"><span style="color: #565656; display: inline;" class="field title"></span><br></span>
@@ -139,7 +138,7 @@
                   <span class="fax icon" style="display:none; font-weight:bold;">F: </span>
                   <span style="color: #565656 !important; display: inline;" class="field fax"></span>
                 </p>
-                <div class="social" style="margin-top:5px"></div>
+                <table class="social" role="presentation" style="margin-top:5px"><tr></tr></table>
               </div>
 					  </div>
 					</div>
@@ -152,23 +151,36 @@
 			</div>
   	</div>
 
-    <div class="hidden">
-      <a href="https://www.instagram.com/LaneTitans" class="instagram" style="text-decoration:none;color:#000;vertical-align:middle">
-        <img src="data:image/gif;base64,R0lGODdhIAAgAKVAAAkLDh0XGRIaIxQdHRslJSAtODYtLBoxXkQrJ04qHjwtQTE5OFg5MWA3LzBFRFJFQ1BEYjlMZExKS38+N60xRjhWWHZJPGRPRpNPM4lYRvo1WJJYSk1sb1FrgIFjVjJu2G5oZHpoYphmUYh2N6FwV5V4aXt/dI5+d26ImVOYUqd+YkiS356NhqaNfLWfi/mUNXitv6ukoWjFXrivqcKvm7rAW3rUhs6/rNDCtsfFwsrSVNvNu9fTz+DVyOrj2/r79iwAAAAAIAAgAAAG/sCf8DczmVCo0mnJbDZDodNsOMxtMKPU54OxWDIZkVgEzngbjDTDk6taKK+abbXCiEgklX6vIpEZCIEGCBZtPyETGi86c3V4fHx4GQAAAwQEAQwhPzwMiYuNdnh5kH4WlAEGDgtpPDENn4x0dnd5pHhipwABChGsCTExCbGhGxu1o2Miury+DMDCxLPGxhgZV8cb1wACBA4OBg3Qw4o6MltdExkuPD4+PC7XZ4GBFuLBCQ0NCwYPDxD5WOSQIODAgQIgcpTQxwBNGnrBWMQwMSPGjBklZuQwwS0CChgdCgA4kSMHj5Mnc+CQGMMFjhMgYsbEAaIjBw4oOFQgMNKQ/hB3PFi6xBEsWI4ZlAp4w1mhgoMBAWLwGOJuZTCXPXwMocltwAAHEcJ2cDoAxJQf7nxYbYkjqzsiBgQUsFQgAgQFElA4XXDWXY+1WN0SCSCXwAABEO4GWHCT71S/OFpcvdHDrY8YASp5FaDgrgEJOh377XFDcowWlAWzkMCt0q4AsBlXAMGinY8eO0oHQ135LYsTXb0SDkBgwc4YIUbvoGEa9Y7eak+w7ub10gIHBCT8vo37Bo0Su288d7sjStwCDpo2JWDgxIW2uHN/Dz+eu4sL0uVGCJn9xIMTOwQYoHfgnSZeZQiu9EAILIQggQS0hWBACOIJeAOBu9FwYIIzo7hnQD8PfDihCxUOeIMLBZagoYCV7YCDCyeEcIE/D+Dnwoom0oBiMCqWOB4ONLDQQoxRnNACjrldqCN4GN3o44A6tiBlC05eaKV3LrTgwQw+eEAlDRqWqCSYN4Z5JZkoXqDVCV6WaaaVYMYpJ5otlODBCT+F4CWVLvQ5J5p9BjqlnclRxcIFHnhQwqKMNupooolegJ9WVKBV0qWYZqppSZQKEQQAOw==" alt="Twitter: " style="outline:none;border:0">
-        <span style="color: #3a87bc;">@LaneTitans</span>
-      </a>
-      <a href="https://www.facebook.com/lanecommunitycollege" class="facebook" style="text-decoration:none;" aria-label="Visit Lane on Facebook">
-        <div class="facebook-container" style="background: #3b5998;display: inline-block;position: relative;border-bottom: 0;width: 30px;box-sizing: content-box;border-radius: 3px;height: 30px;text-indent: -999em;border: 3px solid #3b5998;overflow: hidden;">
-          <span class="before" style="margin-left: 18px;width: 12px;height: 30px;border: 6px solid #eee;border-radius: 6px;display: block;float: left;box-sizing: content-box;"></span>
-          <span class="after" style="background: #eee;display: block;margin-top: 12px;margin-left: 12px;width: 20px;height: 6px;box-sizing: content-box;"></span>
-        </div>
-      </a>
-      <a href="http://www.twitter.com/LaneTitans" class="twitter" style="text-decoration:none;color:#000;vertical-align:middle"">
-        <img alt="Instagram: " src="data:image/gif;base64,R0lGODdhIAAgAKVAABBupiFqozxvmC1zpgCBxRt7wSl6szZ6riJ+xD97pySBwCiBxzSBuzWDtyuFxTqDxDWKyTyKvkaKuTmOzlqHuUaSxkiRzG+KoFOPzEKX0WOQwlSWxk2byWOWzkqd2GyUzmGbxV2b0U6h3Fqj2FKn22Cn3Faq3lqu4mer3nKr1l2x5W2y4oCx03K136WttYy62oi74Xy/6ZjA25/D2JrI6bLW7L7V57vX78TY5Mzk9tXo9drr8ujx+fH2+fT5/P7//CwAAAAAIAAgAAAG/sDfz5WIVDjIpHK5rEQSLuHvwqnlrtisdoutcS5Dzo0WW6nO6LRavYrRbhsi+USv2+/4uzvRgKnygIF0KjANESsmiYqLjI2OKxESKySUlZaXmJkrEhEpmZ8tOj48NJ8pEREoI6sjiKyvIyY7QjwtsKwoqCUivCI0Pjcrvb03UkI1w70luh7NHig+QjowzivGUjXOzssRI9oeL8Y7LR7F10Lk2iMRDd7aOuc059jNJc0jDe3fLPP9Pz46dLy4l29EhoMI+fk712MGiIP4GoRAiDDHwnk7UhwM0eBACAsgQ1awEe3iDxx8QoY44DGkywg2TP544dLCSo8TcurMKcPkyw4IOyfcDDGBhoWgG2b56wEiqFCWISCA4HEDBgoY5payYAChq9ebHSA42ABPJg8QXL167XBgQAcHcBnI6LGwh4wGcPPq7TDArV4FEV7YoCulhw0WDRjoXeyAr9/FChQYMLBBwmQDChgzdtxhgefPoCODHk16AV8AnQmoXs26tevWjQGgfoCgtu3buHPjftABgAAKGAoIH068uPHiGCgIcDFAAwbax6Mbf4BBw4AoFwZQ+MC9u/fv4LtTGABGiAsBAdKrX8++vfrlQoIAADs=" style="outline:none;border:0">
-        <span style="color:color: #3a87bc;">@LaneTitans</span>
-      </a>
-      <p>&nbsp;</p>
-    </div>
+    <table class="hidden">
+      <tr>
+        <td class="instagram" style="padding-right: 5px;">
+          <a href="https://www.instagram.com/LaneTitans" style="text-decoration:none;" aria-label="Visit Lane on Instagram">
+            <div class="instagram-container" style="height: 36px;width: 36px;border-radius: 7px;box-sizing: content-box;background-color: #D93175;display: inline-block;">
+              <span class="before" style="float: left;height: 24px;width: 24px;box-sizing: content-box;border: 2px solid white;margin-top: 4px;margin-left: 4px;border-radius: 6px;">
+                <span class="viewfinder" style="display: block;height: 4px;width: 4px;box-sizing: content-box;border-radius: 50%;background-color: #fff;margin-left: 16px;margin-top: 2px;float: left;"></span>
+                <span class="lens" style="float: left;height: 8px;width: 8px;box-sizing: content-box;border-radius: 50%;border: 2px solid white;margin-left: 6px;"></span>
+              </span>
+            </div>
+          </a>
+        </td>
+        <td class="facebook" style="padding-right: 5px;">
+          <a href="https://www.facebook.com/lanecommunitycollege" style="text-decoration:none;" aria-label="Visit Lane on Facebook">
+            <div style="background: #3b5998;display: inline-block;position: relative;border-bottom: 0;width: 30px;box-sizing: content-box;border-radius: 3px;height: 30px;text-indent: -999em;border: 3px solid #3b5998;overflow: hidden;">
+              <span style="margin-left: 18px;width: 12px;height: 30px;border: 6px solid #fff;border-radius: 6px;display: block;float: left;box-sizing: content-box;"></span>
+              <span style="background: #fff;display: block;margin-top: 12px;margin-left: 12px;width: 20px;height: 6px;box-sizing: content-box;"></span>
+            </div>
+          </a>
+        </td>
+        <td class="twitter" style="padding-right: 5px;">
+          <a href="http://www.twitter.com/LaneTitans" style="text-decoration:none;" aria-label="Follow Lane on Twitter">
+            <div class="twitter-container" style="background: #20B8FF;display: inline-block;position: relative;border-bottom: 0;width: 30px;box-sizing: content-box;border-radius: 3px;height: 30px;text-indent: -999em;border: 3px solid #20B8FF;overflow: hidden;">
+              <span class="before" style="margin-left: 12px;margin-bottom: 12px;width: 12px;height: 20px;border-bottom: 7px solid #eee;border-left: 7px solid #eee;border-radius: 6px;display: block;float: left;box-sizing: content-box;"></span>
+              <span class="after" style="background: #eee;border-radius: 10px;display: block;margin-top: 8px;margin-left: 12px;width: 18px;height: 6px;box-sizing: content-box;"></span>
+            </div>
+          </a>
+        </td>
+      </tr>
+    </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="//static.lanecc.net/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

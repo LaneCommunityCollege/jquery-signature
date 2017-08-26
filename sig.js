@@ -11,6 +11,8 @@ function copyText(element) {
 }
 
 $(function(){
+  //wipe the form on refresh
+  document.forms['siginfo'].reset();
   var form = $('form');
 
   $(document).ready(function(){
@@ -18,11 +20,11 @@ $(function(){
       $currentField = $(this).parents('.input-group').find('input[type=text]');
       if($currentField.is(":visible")){
         $currentField.hide();
-        $('#signature a.' + $currentField.attr('id')).remove();
+        $('#signature td.' + $currentField.attr('id')).remove();
       }
       else {
         $currentField.show();
-        $('.social').append($('.hidden .' + $currentField.attr('id')).clone());
+        $('.social tr').append($('.hidden .' + $currentField.attr('id')).clone());
       }
     });
 
