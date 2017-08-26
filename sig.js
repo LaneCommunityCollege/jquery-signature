@@ -49,7 +49,7 @@ $(function(){
           if(this.value && $('.field.department a').length)
             $('.field.department a').attr('href', $(this).val());
           else if (this.value)
-            $('.field.department').wrapInner("<a href='" + $(this).val() + "' style='color: #3a87bc; text-decoration: none; display: inline;'></a>");
+            $('.field.department').wrapInner("<a href='" + $(this).val() + "' style='color: #0d40d9; text-decoration: none; display: inline;'></a>");
           else
             $('.field.department > a').contents().unwrap();
         }
