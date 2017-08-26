@@ -8,4 +8,4 @@ An example can be found on [our website](https://it.lanecc.edu/signature/).
 * **Facebook Icon** - https://codepen.io/krschmidt/pen/mMGroJ
 * **Instagram Icon** - https://codepen.io/krschmidt/pen/mMGOOr
 * **Twitter Icon** - https://codepen.io/krschmidt/pen/mMGOeP
-* **CSS Inliner** - https://templates.mailchimp.com/resources/inline-css/ - eamil does not support the before or after psuedoclass, as all css styles should be inlined.
+* **CSS Inliner** - https://templates.mailchimp.com/resources/inline-css/ - since all css needs to be inlined.
