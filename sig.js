@@ -10,6 +10,24 @@ function copyText(element) {
   document.execCommand('copy');
 }
 
+function insertInOrder(list, toInsert){
+  var elementIndex = $(toInsert).data('index');
+  var length = $(list).children().length;
+  if(length == 0){
+    $(list).append(toInsert);
+    return;
+  }
+  var children = $(list).children();
+  for(var i=0;i<length;i++){
+    if($(children[i]).data('index') > elementIndex){
+      $(children[i]).before(toInsert);
+      return;
+    }
+  }
+  $(list).append(toInsert);
+  return;
+}
+
 $(function(){
   //wipe the form on refresh
   document.forms['siginfo'].reset();
@@ -24,7 +42,7 @@ $(function(){
       }
       else {
         $currentField.show();
-        $('.social tr').append($('.hidden .' + $currentField.attr('id')).clone());
+        insertInOrder($('.social tr'), $('.hidden .' + $currentField.attr('id')).clone());
       }
     });
 
