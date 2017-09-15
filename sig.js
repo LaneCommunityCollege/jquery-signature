@@ -35,7 +35,7 @@ $(function(){
   var form = $('form');
 
   $(document).ready(function(){
-    $('input[type=checkbox]').on('click', function(){
+    $('.social-media input[type=checkbox]').on('click', function(){
       $currentField = $(this).parents('.input-group').find('input[type=text]');
       if($currentField.is(":visible")){
         $currentField.hide();
@@ -44,6 +44,17 @@ $(function(){
       else {
         $currentField.show();
         insertInOrder($('.social tr'), $('.hidden .' + $currentField.attr('id')).clone());
+      }
+    });
+
+    $('.additions input[type=checkbox]').on('click', function(){
+      $currentField = $(this).parents('.form-group').find('label');
+      field = $currentField.attr('for');
+      if($('.add.' + field).length){
+        $('.add.' + field).remove();
+      }
+      else{
+        $('table.social').after('<p class="add ' + field + '" style="margin-bottom:0">' + $currentField.text() + '</p>');
       }
     });
 
