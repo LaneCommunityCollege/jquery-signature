@@ -64,15 +64,16 @@ $(function(){
         }
         $(target).text($(this).val());
 
-        if(this.id == "url"){
-          if(this.value && $('.field.department a').length)
-            $('.field.department a').attr('href', $(this).val());
-          else if (this.value)
-            $('.field.department').wrapInner("<a href='" + $(this).val() + "' style='color: #0d40d9; text-decoration: none; display: inline;'></a>");
+        if(this.id == "url" || this.id == "department"){
+          if($('#url').val() && $('.field.department a').length)
+            $('.field.department a').attr('href', $('#url').val());
+          else if ($('#url').val())
+            $('.field.department').wrapInner("<a href='" + $('#url').val() + "' style='color: #0d40d9; text-decoration: none; display: inline;'></a>");
           else
             $('.field.department > a').contents().unwrap();
         }
-        else if($(this).parents('.social-media').length){
+        
+        if($(this).parents('.social-media').length){
           $('#signature .' + $(this).attr('id')).attr('href', $(this).val());
           $('.hidden .' + $(this).attr('id')).attr('href', $(this).val());
         }
