@@ -8,6 +8,7 @@ function copyText(element) {
   selection.removeAllRanges();
   selection.addRange(range);
   document.execCommand('copy');
+  //todo insert success message here
 }
 
 function insertInOrder(list, toInsert){
