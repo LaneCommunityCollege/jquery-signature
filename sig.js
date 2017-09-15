@@ -82,22 +82,19 @@ $(function(){
           $('.mid, .mid2, .icon').show();
         }
         else if($('.field.phone').text() && $('.field.mobile').text()){
-          $('.mid').show();
-          $('.mid2').hide();
-          $('.icon.phone, .icon.mobile').show();
+          $('.icon.fax, .mid2').hide();
+          $('.icon.phone, .icon.mobile, .mid').show();
         }
         else if($('.field.phone').text() && $('.field.fax').text()){
-          $('.mid').show();
-          $('.mid2').hide();
-          $('.icon.phone, .icon.fax').show();
+          $('.icon.mobile, .mid2').hide();
+          $('.icon.phone, .icon.fax, .mid').show();
         }
         else if($('.field.mobile').text() && $('.field.fax').text()){
-          $('.mid2').show();
-          $('.mid').hide();
-          $('.icon.mobile, .icon.fax').show();
+          $('.icon.phone, .mid').hide();
+          $('.icon.mobile, .icon.fax, .mid2').show();
         }
         else{
-          $('.mid, mid2, .icon').hide();
+          $('.mid, .mid2, .icon').hide();
         }
 
         if($(this).val() == ""){
