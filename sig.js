@@ -62,7 +62,13 @@ $(function(){
         if($(this).val() != $(target).text() && !$(this).hasClass('notshown') && ($(target).text() == "" || $(this).val() == "")){
           resize = true;
         }
-        $(target).text($(this).val());
+
+        if(this.id == 'name'){
+          $(target).html($(this).val().replace(/(,.*)/g, '<span style="font-weight:normal;font-size:0.9em;">$1</span>'))
+        }
+        else{
+          $(target).html($(this).val());
+        }
 
         if(this.id == "url" || this.id == "department"){
           if($('#url').val() && $('.field.department a').length)
