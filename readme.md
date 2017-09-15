@@ -5,7 +5,5 @@ A quick, miniature website to generate an email signature based on form input, w
 An example can be found on [our website](https://it.lanecc.edu/signature/).
 
 ## Resources
-* **Facebook Icon** - https://codepen.io/krschmidt/pen/mMGroJ
-* **Instagram Icon** - https://codepen.io/krschmidt/pen/mMGOOr
-* **Twitter Icon** - https://codepen.io/krschmidt/pen/mMGOeP
+* **CSS Icons** - https://github.com/krschmidt/css-icons - since image icons don't work well in email
 * **CSS Inliner** - https://templates.mailchimp.com/resources/inline-css/ - since all css needs to be inlined.
