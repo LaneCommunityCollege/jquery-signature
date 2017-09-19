@@ -62,6 +62,12 @@ $(function(){
 
     $('input[type=text]').on('keyup paste blur', function(){
       if($(this).valid() || $(this).val() == ""){
+        // handle the social media urls first
+        if($(this).parents('.social-media').length){
+          $('td.' + $(this).attr('id') + ' a').attr('href', $(this).val());
+          return;
+        }
+
         var target = "." + this.id + ".field";
         
         if($(this).val() == "" && !$(this).hasClass('notshown'))
