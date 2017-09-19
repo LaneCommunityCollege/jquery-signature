@@ -50,13 +50,11 @@ $(function(){
     $('.additions-group input[type=checkbox]').on('click', function(){
       $currentField = $(this).parents('.form-group').find('label');
       field = $currentField.attr('for');
-      if($('.add.' + field).length){
-        $('.add.' + field).remove();
+      if($('.additions .' + field).length){
+        $('.additions .' + field).remove();
       }
       else{
-        //insertInOrder($('.additions'), )
-        $saying = $("<p class='add " + field +"' style='margin-bottom:0' data-index='" + $currentField.data('index') + "'>" + $currentField.text() + "</p>");
-        insertInOrder($('.additions'), $saying);
+        insertInOrder($('.additions'), $('.hidden .' + field).clone());
       }
     });
 
@@ -87,7 +85,7 @@ $(function(){
           if($('#url').val() && $('.field.department a').length)
             $('.field.department a').attr('href', $('#url').val());
           else if ($('#url').val())
-            $('.field.department').wrapInner("<a href='" + $('#url').val() + "' style='color: #0d40d9; text-decoration: none; display: inline;'></a>");
+            $('.field.department').wrapInner("<a href='" + $('#url').val() + "' style='color: #337ab7; text-decoration: none; display: inline;'></a>");
           else
             $('.field.department > a').contents().unwrap();
         }

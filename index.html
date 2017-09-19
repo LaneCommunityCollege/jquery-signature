@@ -57,8 +57,9 @@
             <div class="form-group">
               <label for="campus" class="col-md-3">Campus</label>
               <div class="col-md-8">
-                <input type="text" class="form-control" name="campus" id="campus">
+                <input type="text" class="form-control" name="campus" id="campus" aria-describedby="campus-help">
               </div>
+              <p class="help-block col-md-12" id="campus-help">It is not usually necessary to specify that you work at the 30<sup>th</sup> Ave. campus</p>
             </div>
 						<div class="form-group">
 							<label for="email" class="col-md-3">Email</label>
@@ -125,19 +126,31 @@
             <p>Please limit the number of additions to your signature</p>
             <div class="additions-group">
               <div class="form-group">
-                <label for="eeo" class="col-md-9" data-index=0>Lane is a AA/EEO/Veterans/Disabilities Employer</label>
+                <label for="eeo" class="col-md-9">Lane is a AA/EEO/Veterans/Disabilities Employer</label>
                 <div class="col-md-2">
                   <input type="checkbox" id="eeo" aria-label="Show EEO?">
                 </div>
               </div>
               <div class="form-group">
-                <label for="employmentopps" class="col-md-9" data-index=1>Employment Opportunities: jobs.lanecc.edu</label>
+                <label for="employmentopps" class="col-md-9">Employment Opportunities: jobs.lanecc.edu</label>
                 <div class="col-md-2">
                   <input type="checkbox" id="employmentopps" aria-label="Show Employemnt Opportunities?">
                 </div>
               </div>
               <div class="form-group">
-                <label for="confidentiality" class="col-md-9" data-index=2>This message and its contents may be confidential. If you received this message in error, please inform the sender and delete the message. Thank you.</label>
+                <label for="helpdesk" class="col-md-9">Need technical support? Contact the IT Helpdesk at helpdesk@lanecc.edu or call 463-4444</label>
+                <div class="col-md-2">
+                  <input type="checkbox" id="helpdesk" aria-label="Show Helpdesk Message?">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="titans" class="col-md-9">Go Titans!</label>
+                <div class="col-md-2">
+                  <input type="checkbox" id="titans" aria-label="Show Titans Message?">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="confidentiality" class="col-md-9">This message and its contents may be confidential. If you received this message in error, please inform the sender and delete the message. Thank you.</label>
                 <div class="col-md-2">
                   <input type="checkbox" id="confidentiality" aria-label="Show confidentiality notice?">
                 </div>
@@ -154,7 +167,7 @@
                   <span style="font-size: 20px; font-weight: bold; color: #0b223f; display: inline;" class="field name">Your Name</span><br>
                   <span style="display:none"><span style="color: #565656; display: inline;" class="field title"></span><br></span>
                   <span style="display:none"><span style="color: #565656; display: inline;" class="field department"></span><br></span>
-                  <a href="http://www.lanecc.edu" style="color: #0d40d9; text-decoration: none; display: inline;">Lane Community College</a><br>
+                  <a href="http://www.lanecc.edu" style="color: #337ab7 text-decoration: none; display: inline;">Lane Community College</a><br>
                   <span style="display:none"><span style="color: #565656; display: inline;" class="field campus"></span><br></span>
                   <span style="display:none"><span style="color: #565656; display: inline;" class="field email"></span><br></span>
                   
@@ -170,7 +183,7 @@
                   <span style="color: #565656 !important; display: inline;text-decoration:none;" class="field fax"></span>
                 </p>
                 <table class="social" role="presentation" style="margin-top:5px"><tr></tr></table>
-                <div class="additions"></div>
+                <div class="additions" style="font-size:0.9em"></div>
               </div>
 					  </div>
 					</div>
@@ -213,6 +226,14 @@
         </td>
       </tr>
     </table>
+
+    <div class="hidden">
+      <p class="eeo" data-index="0" style="margin:0">Lane is a AA/EEO/Veterans/Disabilities Employer</p>
+      <p class="employmentopps" data-index="1" style="margin:0">Employment Opportunities: <a href="https://jobs.lanecc.edu">jobs.lanecc.edu</a></p>
+      <p class="helpdesk" data-index=2 style="margin:0">Need technical support? Contact the <a href="https://www.lanecc.edu/it/helpdesk">IT Helpdesk</a> at helpdesk@lanecc.edu or call 463-4444</p>
+      <p class="titans" data-index=3 style="margin:0; font-weight:bold">Go Titans!</p>
+      <p class="confidentiality" data-index="10" style="margin:0.5em 0">This message and its contents may be confidential. If you received this message in error, please inform the sender and delete the message. Thank you.</p>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="//static.lanecc.net/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
