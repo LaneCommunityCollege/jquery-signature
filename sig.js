@@ -47,14 +47,16 @@ $(function(){
       }
     });
 
-    $('.additions input[type=checkbox]').on('click', function(){
+    $('.additions-group input[type=checkbox]').on('click', function(){
       $currentField = $(this).parents('.form-group').find('label');
       field = $currentField.attr('for');
       if($('.add.' + field).length){
         $('.add.' + field).remove();
       }
       else{
-        $('table.social').after('<p class="add ' + field + '" style="margin-bottom:0">' + $currentField.text() + '</p>');
+        //insertInOrder($('.additions'), )
+        $saying = $("<p class='add " + field +"' style='margin-bottom:0' data-index='" + $currentField.data('index') + "'>" + $currentField.text() + "</p>");
+        insertInOrder($('.additions'), $saying);
       }
     });
 
