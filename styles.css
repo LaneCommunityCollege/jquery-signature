@@ -18,3 +18,7 @@ img.logo {
 label.error {
   color: #a94442;
 }
+
+#success-alert {
+  display:none;
+}

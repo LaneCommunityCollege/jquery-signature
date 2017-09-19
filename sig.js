@@ -8,7 +8,9 @@ function copyText(element) {
   selection.removeAllRanges();
   selection.addRange(range);
   document.execCommand('copy');
-  //todo insert success message here
+  $("#success-alert").fadeIn(500, function(){
+      $("#success-alert").delay(5000).fadeOut(500);
+  });
 }
 
 function insertInOrder(list, toInsert){
