@@ -158,7 +158,7 @@ $(function(){
       }
     },
     messages: {
-      url: "Please enter a valid URL, starting with http://",
+      url: "Please enter a valid URL, starting with https://",
       phone: "Please specify a valid Phone Number, starting with the area code"
     }
   });
