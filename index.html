@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//static.lanecc.net/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//static.lanecc.net/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="styles.css">
-		<link rel="icon" href="//static.lanecc.net/favicon.ico">
+    <link rel="icon" href="//static.lanecc.net/favicon.ico">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,35 +19,35 @@
     <![endif]-->
   </head>
   <body>
-		<div class="container">
-			<div class="page-header">
-				<img class="logo" src="//static.lanecc.net/logo.png" alt="">
-				<h1>Signature Generator</h1>
-			</div>
-			<p class="lead">After entering your information below, copy and paste the generated signature into the signature box.</p>
-			<div class="row">
-				<div class="col-md-6">
-			  	<h2 class="sr-only">Enter your information below</h2>
-					<form class="form-horizontal clearfix" id="siginfo">
-						<div class="form-group">
-							<label for="name" class="col-md-3">Name <small class="required text-danger">required</small></label>
-							<div class="col-md-8">
-								<input type="text" class="form-control" id="name" name="name" required aria-describedby="name-help">
-							</div>
+    <div class="container">
+      <div class="page-header">
+        <img class="logo" src="//static.lanecc.net/logo.png" alt="">
+        <h1>Signature Generator</h1>
+      </div>
+      <p class="lead">Create your Lane email signature below, then follow the instructions to add it to Gmail on your computer.</p>
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="sr-only">Enter your information below</h2>
+          <form class="form-horizontal clearfix" id="siginfo">
+            <div class="form-group">
+              <label for="name" class="col-md-3">Name <small class="required text-danger">required</small></label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="name" name="name" required aria-describedby="name-help">
+              </div>
               <p class="help-block col-md-12" id="name-help">To add post-nominal letters, like PhD, MBA, or PMP, add a comma after your name, followed by the letters. For example: Jane Doe, PhD, CPA</p>
-						</div>
-						<div class="form-group">
-							<label for="title" class="col-md-3">Job Title</label>
-							<div class="col-md-8">
-								<input type="text" class="form-control" name="title" id="title">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="department" class="col-md-3">Department</label>
-							<div class="col-md-8">
-								<input type="text" class="form-control department" id="department">
-							</div>
-						</div>
+            </div>
+            <div class="form-group">
+              <label for="title" class="col-md-3">Job Title</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" name="title" id="title">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="department" class="col-md-3">Department</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control department" id="department">
+              </div>
+            </div>
             <div class="form-group">
               <label for="url" class="col-md-3">Department URL</label>
               <div class="col-md-8">
@@ -61,24 +61,24 @@
               </div>
               <p class="help-block col-md-12" id="campus-help">It is not usually necessary to specify that you work at the 30<sup>th</sup> Ave. campus</p>
             </div>
-						<div class="form-group">
-							<label for="email" class="col-md-3">Email</label>
-							<div class="col-md-8">
-								<input type="text" class="form-control" id="email" name="email">
-							</div>
-						</div>
+            <div class="form-group">
+              <label for="email" class="col-md-3">Email</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="email" name="email">
+              </div>
+            </div>
             <div class="form-group">
               <label for="pronouns" class="col-md-3">Pronouns</label>
               <div class="col-md-8">
                 <input type="text" class="form-control" id="pronouns" name="pronouns">
               </div>
             </div>
-						<div class="form-group">
-							<label for="phone" class="col-md-3">Office Phone Number</label>
-							<div class="col-md-8">
-								<input type="text" class="form-control" id="phone" name="phone">
-							</div>
-						</div>
+            <div class="form-group">
+              <label for="phone" class="col-md-3">Office Phone Number</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="phone" name="phone">
+              </div>
+            </div>
             <div class="form-group">
               <label for="mobile" class="col-md-3">Mobile Phone Number</label>
               <div class="col-md-8">
@@ -91,7 +91,7 @@
                 <input type="text" class="form-control" id="fax" name="fax">
               </div>
             </div>
-						<hr>
+            <hr>
             <div class="social-media">
               <div class="form-group">
                 <label for="facebook" class="col-md-3">Facebook</label>
@@ -191,12 +191,12 @@
                 </div>
               </div>
             </div>
-					</form>
-				</div>
-				<div class="col-md-6">
-					<div class="panel panel-default">
-						<h2 class="sr-only">Copy your signature from below</h2>
-					  <div id="signature" class="panel-body">
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <h2 class="sr-only">Copy your signature from below</h2>
+            <div id="signature" class="panel-body">
               <div style="margin-top: 10px;margin-bottom:10px; width:100%;">
                 <p style="color:#000000;font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; color: rgb(33, 33, 33); display:inline-block;margin:0">
                   <span style="font-size: 20px; font-weight: bold; color: #0b223f; display: inline;" class="field name">Your Name</span><br>
@@ -222,18 +222,43 @@
                 <div class="additions" style="font-size:0.9em">
                 </div>
               </div>
-					  </div>
-					</div>
-					<button class="btn btn-primary" onclick="copyText('signature')">Copy to Clipboard</button><br><br>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="copyText('signature')">Copy to Clipboard</button><br><br>
           <div class="alert alert-success" id="success-alert">
             <p>Signature has been copied to the clipboard.</p>
           </div>
-					<p>If you choose to make additional modifications to your signature, please be sure they adhere to the <a href="https://www.lanecc.edu/mpr/logo-graphics-standards">Graphic Standards</a> of the college. Please do not include any quotes or disclaimers.</p>
-          <p><strong>If you use Mac Mail:</strong> unfortunately, it is very difficult to include your signature within Mac Mail. If you're familiar with HTML, you can use <a href="https://www.daretothink.co.uk/html-email-signature-in-apple-mail/">these instructions for adding your signature to Mac Mail</a>.</p>
+          <p>If you choose to make additional modifications to your signature, please be sure they adhere to the <a href="https://www.lanecc.edu/mpr/logo-graphics-standards">Graphic Standards</a> of the college. Please do not include any quotes or disclaimers.</p>
+          <section aria-labelledby="gmail-instructions-heading">
+            <h2 id="gmail-instructions-heading">Add your signature to Gmail</h2>
+            <ol>
+              <li>On your computer, enter your information above and review the signature preview.</li>
+              <li>Click <strong>Copy to Clipboard</strong>.</li>
+              <li>Open your Lane account in <a href="https://mail.google.com/">Gmail</a>. Click the <strong>Settings</strong> gear, then <strong>See all settings</strong>.</li>
+              <li>On the <strong>General</strong> tab, scroll to <strong>Signature</strong>. Select the signature you want to update, or click <strong>Create new</strong> and give it a name, such as Lane.</li>
+              <li>Click inside the signature editing box and replace its existing contents by pasting your generated signature. Use <strong>Ctrl+V</strong> on Windows or <strong>Command+V</strong> on a Mac to preserve the formatting.</li>
+              <li>Under <strong>Signature defaults</strong>, select your signature for new emails and, if desired, replies and forwards.</li>
+              <li>Scroll to the bottom of the settings page and click <strong>Save Changes</strong>.</li>
+              <li>Start a new message to check the signature, then send yourself a test email to review its appearance.</li>
+            </ol>
+            <p>If the copy button does not work, select the signature in the preview, copy it with <strong>Ctrl+C</strong> or <strong>Command+C</strong>, and paste it into Gmail.</p>
+            <p><a href="https://support.google.com/mail/answer/8395?hl=en&amp;co=GENIE.Platform%3DDesktop">Google's Gmail signature instructions</a></p>
+          </section>
+          <section aria-labelledby="mobile-instructions-heading" class="well">
+            <h2 id="mobile-instructions-heading">Using Gmail on your phone?</h2>
+            <p><strong>Check your mobile signature settings.</strong> If you have not set a separate signature in the Gmail app, new messages use the signature you set up on your computer. A separate mobile signature applies to messages sent from the app and needs to be updated separately.</p>
+            <p>To check the settings for your Lane account:</p>
+            <ul>
+              <li><strong>Android:</strong> Open the Gmail app, tap <strong>Menu</strong>, then <strong>Settings</strong>, choose your Lane account, and tap <strong>Mobile signature</strong>.</li>
+              <li><strong>iPhone or iPad:</strong> Open the Gmail app, tap <strong>Menu</strong>, then <strong>Settings</strong>. Under <strong>Compose and Reply</strong>, tap <strong>Signature settings</strong>. Check the setting for your Lane account if you have multiple accounts.</li>
+            </ul>
+            <p>After saving your computer signature, send yourself a new message and a reply from your phone to confirm the signature you want is included.</p>
+            <p>See Google's instructions for <a href="https://support.google.com/mail/answer/8395?hl=en&amp;co=GENIE.Platform%3DAndroid">Android signatures</a> or <a href="https://support.google.com/mail/answer/8395?hl=en&amp;co=GENIE.Platform%3DiOS">iPhone and iPad signatures</a>.</p>
+          </section>
           <p><strong>Problems?</strong> Please report any issues to Kyle by emailing him at <a href="mailto:schmidtk@lanecc.edu">schmidtk@lanecc.edu</a>.</p>
-				</div>
-			</div>
-  	</div>
+        </div>
+      </div>
+    </div>
 
     <table class="hidden">
       <tr>
@@ -267,7 +292,7 @@
           </a>
         </td>
         <td class="youtube" style="padding-right: 5px" data-index=4>
-          <a href="http://youtube.com/lanecommunitycollegeeugene" style="text-decoration:none;" aria-label="Follow Lane on YouTube">
+          <a href="https://youtube.com/lanecommunitycollegeeugene" style="text-decoration:none;" aria-label="Follow Lane on YouTube">
             <div class="youtube-container" style="background: #F00;display: inline-block;position: relative;border-bottom: 0;width: 30px;box-sizing: content-box;border-radius: 3px;height: 30px;text-indent: -999em;border: 3px solid #F00;overflow: hidden;">
               <span class="play" style="width: 0;height: 0;border-style: solid;border-width: 11px 0 11px 17px;border-color: transparent transparent transparent #fff;margin-left: 9px;margin-top: 4px;display: block;"></span>
             </div>
@@ -291,9 +316,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="//static.lanecc.net/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-		<script src="sig.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="sig.js"></script>
     <script src="//static.lanecc.net/mm/lmm.min.js"></script>
   </body>
 </html>
