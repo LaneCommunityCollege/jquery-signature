@@ -1,28 +1,154 @@
-h2 {
-  font-size: 140%;
+/* Generator interface styles. Signature artwork keeps its own inline styles. */
+body {
+  margin: 0;
+  background: #fff;
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
 }
 
-.required {
-  text-transform: uppercase;
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-img.logo {
-  display: inline;
-  padding: 0 1em 1em 0;
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
 }
 
-.page-header h1{
-  display: inline;
+img.logo { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: inherit; font-weight: 500; line-height: 1.2; }
+h1 { margin: 0; font-size: 36px; }
+h2 { margin: 20px 0 10px; font-size: 140%; }
+h3 { margin: 20px 0 10px; font-size: 24px; }
+p { margin: 0 0 10px; }
+a { color: #337ab7; text-decoration: underline; }
+a:hover { color: #23527c; }
+strong { font-weight: 700; }
+small { font-size: 85%; }
+sup { position: relative; top: -.5em; font-size: 75%; line-height: 0; vertical-align: baseline; }
+hr { height: 0; margin: 20px 0; border: 0; border-top: 1px solid #eee; }
+ol, ul { margin: 0 0 10px; padding-left: 26px; }
+li + li { margin-top: 6px; }
+.lead { margin-bottom: 20px; font-size: 20px; font-weight: 300; line-height: 1.4; }
+.required { text-transform: uppercase; }
+.text-danger { color: #a94442; }
+
+.row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; }
+.row > div { min-width: 0; }
+
+#siginfo { margin: 0; }
+#siginfo .form-group {
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) minmax(0, 3fr);
+  align-items: start;
+  gap: 0 12px;
+  margin-bottom: 15px;
+}
+#siginfo .form-group > div { min-width: 0; }
+#siginfo label { display: block; padding-top: 7px; font-weight: 700; }
+#siginfo .form-control {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  font: inherit;
+  line-height: 20px;
+}
+#siginfo .form-control:focus { border-color: #00529b; outline: 2px solid #00529b; outline-offset: 2px; }
+#siginfo input[type="checkbox"] { width: 16px; height: 16px; margin: 7px 0 0; accent-color: #00529b; }
+#siginfo input[type="checkbox"]:focus-visible, button:focus-visible, a:focus-visible {
+  outline: 2px solid #00529b;
+  outline-offset: 3px;
+}
+#siginfo .help-block { grid-column: 1 / -1; margin: 5px 0 0; color: #595959; }
+#siginfo label.error { margin: 5px 0 0; padding: 0; color: #a94442; font-weight: 400; }
+#siginfo .form-control.error { border-color: #a94442; }
+
+#siginfo .input-group { display: flex; align-items: stretch; min-height: 34px; }
+#siginfo .input-group-addon {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  background: #eee;
+}
+#siginfo .input-group-addon input[type="checkbox"] { margin: 0; }
+#siginfo .input-group .form-control { flex: 1 1 auto; min-width: 0; border-left: 0; border-radius: 0 4px 4px 0; }
+#siginfo .additions-group .form-group { grid-template-columns: minmax(0, 1fr) 24px; }
+#siginfo .additions-group label { padding-top: 0; }
+#siginfo .additions-group input[type="checkbox"] { margin-top: 2px; }
+
+.panel { margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; background: #fff; }
+.panel-body { padding: 15px; overflow-wrap: anywhere; }
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 8px 14px;
+  border: 1px solid #00427e;
+  border-radius: 4px;
+  background: #00529b;
+  color: #fff;
+  font: inherit;
+  line-height: 1.42857143;
+  text-align: center;
+  cursor: pointer;
+}
+.btn:hover { text-decoration: underline; }
+.alert { margin-bottom: 20px; padding: 15px; border: 1px solid #c5dfb9; border-radius: 4px; }
+.alert-success { background: #e7f3e2; color: #2c602d; }
+.alert p:last-child { margin-bottom: 0; }
+#success-alert { display: none; }
+.well { margin: 20px 0; padding: 18px; border: 1px solid #ddd; border-radius: 4px; background: #f5f5f5; }
+.well h2:first-child { margin-top: 0; }
+.well p:last-child { margin-bottom: 0; }
+.footer { padding: 3em 0; }
+
+/* Keep the template selectors used by sig.js, without depending on a framework. */
+.hidden { display: none !important; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-label.error {
-  color: #a94442;
+@media (min-width: 992px) {
+  .row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
-
-#success-alert {
-  display:none;
+@media (max-width: 599px) {
+  #siginfo .form-group { grid-template-columns: minmax(0, 1fr); gap: 5px; }
+  #siginfo label { padding-top: 0; }
+  #siginfo .additions-group .form-group { grid-template-columns: minmax(0, 1fr) 24px; gap: 12px; }
+  h1 { font-size: 30px; }
+  .page-header { margin-top: 24px; }
 }
-
-.footer {
-  padding: 3em 0;
+@media (max-width: 400px) {
+  .container { padding-right: 10px; padding-left: 10px; }
+  .panel-body { padding: 4px; }
 }
