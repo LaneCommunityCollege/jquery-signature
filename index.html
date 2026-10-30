@@ -6,124 +6,125 @@
     <title>Lane Signature Generator</title>
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="//static.lanecc.net/favicon.ico">
+		<link rel="icon" href="https://static.lanecc.net/favicon.ico">
   </head>
-  <body>
-    <div class="container">
-      <div class="page-header">
-        <img class="logo" src="//static.lanecc.net/logo.png" alt="">
-        <h1>Signature Generator</h1>
-      </div>
-      <p class="lead">Create your Lane email signature below, then follow the instructions to add it to Gmail on your computer.</p>
-      <div class="row">
-        <div class="col-md-6">
-          <h2 class="sr-only">Enter your information below</h2>
-          <form class="form-horizontal clearfix" id="siginfo">
-            <div class="form-group">
-              <label for="name" class="col-md-3">Name <small class="required text-danger">required</small></label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" id="name" name="name" required aria-describedby="name-help">
-              </div>
-              <p class="help-block col-md-12" id="name-help">To add post-nominal letters, like PhD, MBA, or PMP, add a comma after your name, followed by the letters. For example: Jane Doe, PhD, CPA</p>
-            </div>
-            <div class="form-group">
-              <label for="title" class="col-md-3">Job Title</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" name="title" id="title">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="department" class="col-md-3">Department</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control department" id="department">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="url" class="col-md-3">Department URL</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control notshown" name="url" id="url">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="campus" class="col-md-3">Campus</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" name="campus" id="campus" aria-describedby="campus-help">
-              </div>
-              <p class="help-block col-md-12" id="campus-help">It is not usually necessary to specify that you work at the 30<sup>th</sup> Ave. campus</p>
-            </div>
-            <div class="form-group">
-              <label for="email" class="col-md-3">Email</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" id="email" name="email">
+  <body style="margin:0;">
+		<div class="lane-signature-generator" data-lane-signature-generator="">
+<div class="lsg-container">
+			<div class="lsg-page-header">
+				<img class="lsg-logo" src="https://static.lanecc.net/logo.png" alt="">
+				<h1>Signature Generator</h1>
+			</div>
+			<p class="lsg-lead">Create your Lane email signature below, then follow the instructions to add it to Gmail on your computer.</p>
+			<div class="lsg-row">
+				<div class="lsg-col-md-6">
+			  	<h2 class="lsg-sr-only">Enter your information below</h2>
+					<form class="lsg-form-horizontal lsg-clearfix" id="lsg-siginfo" data-signature-form="" novalidate="novalidate">
+						<div class="lsg-form-group">
+							<label for="lsg-name" class="lsg-col-md-3">Name <small class="lsg-required lsg-text-danger">required</small></label>
+							<div class="lsg-col-md-8">
+								<input type="text" class="lsg-form-control" id="lsg-name" name="name" required aria-describedby="lsg-name-help" data-field="name" autocomplete="name">
+							</div>
+              <p class="lsg-help-block lsg-col-md-12" id="lsg-name-help">To add post-nominal letters, like PhD, MBA, or PMP, add a comma after your name, followed by the letters. For example: Jane Doe, PhD, CPA</p>
+						</div>
+						<div class="lsg-form-group">
+							<label for="lsg-title" class="lsg-col-md-3">Job Title</label>
+							<div class="lsg-col-md-8">
+								<input type="text" class="lsg-form-control" name="title" id="lsg-title" data-field="title" autocomplete="organization-title">
+							</div>
+						</div>
+						<div class="lsg-form-group">
+							<label for="lsg-department" class="lsg-col-md-3">Department</label>
+							<div class="lsg-col-md-8">
+								<input type="text" class="lsg-form-control lsg-department" id="lsg-department" data-field="department" name="department">
+							</div>
+						</div>
+            <div class="lsg-form-group">
+              <label for="lsg-url" class="lsg-col-md-3">Department URL</label>
+              <div class="lsg-col-md-8">
+                <input type="url" class="lsg-form-control lsg-notshown" name="url" id="lsg-url" data-field="url">
               </div>
             </div>
-            <div class="form-group">
-              <label for="pronouns" class="col-md-3">Pronouns</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" id="pronouns" name="pronouns">
+            <div class="lsg-form-group">
+              <label for="lsg-campus" class="lsg-col-md-3">Campus</label>
+              <div class="lsg-col-md-8">
+                <input type="text" class="lsg-form-control" name="campus" id="lsg-campus" aria-describedby="lsg-campus-help" data-field="campus">
+              </div>
+              <p class="lsg-help-block lsg-col-md-12" id="lsg-campus-help">It is not usually necessary to specify that you work at the 30<sup>th</sup> Ave. campus</p>
+            </div>
+						<div class="lsg-form-group">
+							<label for="lsg-email" class="lsg-col-md-3">Email</label>
+							<div class="lsg-col-md-8">
+								<input type="email" class="lsg-form-control" id="lsg-email" name="email" data-field="email" autocomplete="email">
+							</div>
+						</div>
+            <div class="lsg-form-group">
+              <label for="lsg-pronouns" class="lsg-col-md-3">Pronouns</label>
+              <div class="lsg-col-md-8">
+                <input type="text" class="lsg-form-control" id="lsg-pronouns" name="pronouns" data-field="pronouns">
               </div>
             </div>
-            <div class="form-group">
-              <label for="phone" class="col-md-3">Office Phone Number</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" id="phone" name="phone">
+						<div class="lsg-form-group">
+							<label for="lsg-phone" class="lsg-col-md-3">Office Phone Number</label>
+							<div class="lsg-col-md-8">
+								<input type="tel" class="lsg-form-control" id="lsg-phone" name="phone" data-field="phone">
+							</div>
+						</div>
+            <div class="lsg-form-group">
+              <label for="lsg-mobile" class="lsg-col-md-3">Mobile Phone Number</label>
+              <div class="lsg-col-md-8">
+                <input type="tel" class="lsg-form-control" id="lsg-mobile" name="mobile" data-field="mobile">
               </div>
             </div>
-            <div class="form-group">
-              <label for="mobile" class="col-md-3">Mobile Phone Number</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" id="mobile" name="mobile">
+            <div class="lsg-form-group">
+              <label for="lsg-fax" class="lsg-col-md-3">Fax Number</label>
+              <div class="lsg-col-md-8">
+                <input type="tel" class="lsg-form-control" id="lsg-fax" name="fax" data-field="fax">
               </div>
             </div>
-            <div class="form-group">
-              <label for="fax" class="col-md-3">Fax Number</label>
-              <div class="col-md-8">
-                <input type="text" class="form-control" id="fax" name="fax">
-              </div>
-            </div>
-            <hr>
-            <div class="social-media">
-              <div class="form-group">
-                <label for="facebook" class="col-md-3">Facebook</label>
-                <div class="col-md-8">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <input type="checkbox" aria-label="Show facebook?">
+						<hr>
+            <div class="lsg-social-media">
+              <div class="lsg-form-group">
+                <label for="lsg-enable-facebook" class="lsg-col-md-3">Facebook</label>
+                <div class="lsg-col-md-8">
+                  <div class="lsg-input-group">
+                    <span class="lsg-input-group-addon">
+                      <input type="checkbox" aria-label="Show facebook?" data-social-toggle="facebook" id="lsg-enable-facebook" aria-controls="lsg-facebook" aria-expanded="false">
                     </span>
-                    <input type="text" class="form-control" id='facebook' value='https://www.facebook.com/lanecommunitycollege' style="display:none">
+                    <input type="url" class="lsg-form-control" id="lsg-facebook" value="https://www.facebook.com/lanecommunitycollege" data-field="facebook" name="facebook" aria-label="Facebook URL" hidden="hidden" disabled>
                   </div>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="instagram" class="col-md-3">Instagram</label>
-                <div class="col-md-8">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <input type="checkbox" aria-label="Show instagram?">
+              <div class="lsg-form-group">
+                <label for="lsg-enable-instagram" class="lsg-col-md-3">Instagram</label>
+                <div class="lsg-col-md-8">
+                  <div class="lsg-input-group">
+                    <span class="lsg-input-group-addon">
+                      <input type="checkbox" aria-label="Show instagram?" data-social-toggle="instagram" id="lsg-enable-instagram" aria-controls="lsg-instagram" aria-expanded="false">
                     </span>
-                    <input type="text" class="form-control" id='instagram' value='https://www.instagram.com/lanetitans/' style="display:none">
+                    <input type="url" class="lsg-form-control" id="lsg-instagram" value="https://www.instagram.com/lanetitans/" data-field="instagram" name="instagram" aria-label="Instagram URL" hidden="hidden" disabled>
                   </div>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="linkedin" class="col-md-3">LinkedIn</label>
-                <div class="col-md-8">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <input type="checkbox" aria-label="Show LinkedIn?">
+              <div class="lsg-form-group">
+                <label for="lsg-enable-linkedin" class="lsg-col-md-3">LinkedIn</label>
+                <div class="lsg-col-md-8">
+                  <div class="lsg-input-group">
+                    <span class="lsg-input-group-addon">
+                      <input type="checkbox" aria-label="Show LinkedIn?" data-social-toggle="linkedin" id="lsg-enable-linkedin" aria-controls="lsg-linkedin" aria-expanded="false">
                     </span>
-                    <input type="text" class="form-control" id='linkedin' value='https://www.linkedin.com/school/lane-community-college/' style="display:none">
+                    <input type="url" class="lsg-form-control" id="lsg-linkedin" value="https://www.linkedin.com/school/lane-community-college/" data-field="linkedin" name="linkedin" aria-label="LinkedIn URL" hidden="hidden" disabled>
                   </div>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="youtube" class="col-md-3">YouTube</label>
-                <div class="col-md-8">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <input type="checkbox" aria-label="Show youtube?">
+              <div class="lsg-form-group">
+                <label for="lsg-enable-youtube" class="lsg-col-md-3">YouTube</label>
+                <div class="lsg-col-md-8">
+                  <div class="lsg-input-group">
+                    <span class="lsg-input-group-addon">
+                      <input type="checkbox" aria-label="Show youtube?" data-social-toggle="youtube" id="lsg-enable-youtube" aria-controls="lsg-youtube" aria-expanded="false">
                     </span>
-                    <input type="text" class="form-control" id='youtube' value='http://youtube.com/lanecommunitycollegeeugene' style="display:none">
+                    <input type="url" class="lsg-form-control" id="lsg-youtube" value="http://youtube.com/lanecommunitycollegeeugene" data-field="youtube" name="youtube" aria-label="YouTube URL" hidden="hidden" disabled>
                   </div>
                 </div>
               </div>
@@ -131,102 +132,92 @@
             <hr>
             <h3>Signature Additions</h3>
             <p>Please limit the number of additions to your signature.</p>
-            <div class="additions-group">
-              <div class="form-group">
-                <label for="capital-campaign" class="col-md-9">A Lasting, Local Lane — capital campaign</label>
-                <div class="col-md-2">
-                  <input type="checkbox" id="capital-campaign">
+            <div class="lsg-additions-group">
+              <div class="lsg-form-group">
+                <label for="lsg-capital-campaign" class="lsg-col-md-9">A Lasting, Local Lane — capital campaign</label>
+                <div class="lsg-col-md-2">
+                  <input type="checkbox" id="lsg-capital-campaign" data-addition-toggle="capital-campaign">
                 </div>
               </div>
-              <div class="form-group">
-                <label for="eeo" class="col-md-9">Lane is a AA/EEO/Veterans/Disabilities Employer</label>
-                <div class="col-md-2">
-                  <input type="checkbox" id="eeo" aria-label="Show EEO?">
+              <div class="lsg-form-group">
+                <label for="lsg-eeo" class="lsg-col-md-9">Lane is a AA/EEO/Veterans/Disabilities Employer</label>
+                <div class="lsg-col-md-2">
+                  <input type="checkbox" id="lsg-eeo" aria-label="Show EEO?" data-addition-toggle="eeo">
                 </div>
               </div>
-              <div class="form-group">
-                <label for="employmentopps" class="col-md-9">Employment Opportunities: jobs.lanecc.edu</label>
-                <div class="col-md-2">
-                  <input type="checkbox" id="employmentopps" aria-label="Show Employemnt Opportunities?">
+              <div class="lsg-form-group">
+                <label for="lsg-employmentopps" class="lsg-col-md-9">Employment Opportunities: jobs.lanecc.edu</label>
+                <div class="lsg-col-md-2">
+                  <input type="checkbox" id="lsg-employmentopps" aria-label="Show Employemnt Opportunities?" data-addition-toggle="employmentopps">
                 </div>
               </div>
-              <div class="form-group">
-                <label for="helpdesk" class="col-md-9">Need technical support? Contact the IT Helpdesk at helpdesk@lanecc.edu or call 463-4444</label>
-                <div class="col-md-2">
-                  <input type="checkbox" id="helpdesk" aria-label="Show helpdesk message?">
+              <div class="lsg-form-group">
+                <label for="lsg-helpdesk" class="lsg-col-md-9">Need technical support? Contact the IT Helpdesk at helpdesk@lanecc.edu or call 463-4444</label>
+                <div class="lsg-col-md-2">
+                  <input type="checkbox" id="lsg-helpdesk" aria-label="Show helpdesk message?" data-addition-toggle="helpdesk">
                 </div>
               </div>
-              <div class="form-group">
-                <label for="tour" class="col-md-9">Check out our virtual tour!</label>
-                <div class="col-md-2">
-                  <input type="checkbox" id="tour" aria-label="Show virtual tour message?">
+              <div class="lsg-form-group">
+                <label for="lsg-tour" class="lsg-col-md-9">Check out our virtual tour!</label>
+                <div class="lsg-col-md-2">
+                  <input type="checkbox" id="lsg-tour" aria-label="Show virtual tour message?" data-addition-toggle="tour">
                 </div>
               </div>
-              <div class="form-group">
-                <label for="espanol" class="col-md-9">Hablo español</label>
-                <div class="col-md-2">
-                  <input type="checkbox" id="espanol" aria-label="Show hablo español message??">
+              <div class="lsg-form-group">
+                <label for="lsg-espanol" class="lsg-col-md-9">Hablo español</label>
+                <div class="lsg-col-md-2">
+                  <input type="checkbox" id="lsg-espanol" aria-label="Show hablo español message??" data-addition-toggle="espanol">
                 </div>
               </div>
-              <div class="form-group">
-                <label for="titans" class="col-md-9">Go Titans! ⚡</label>
-                <div class="col-md-2">
-                  <input type="checkbox" id="titans" aria-label="Show Titans message?">
+              <div class="lsg-form-group">
+                <label for="lsg-titans" class="lsg-col-md-9">Go Titans! ⚡</label>
+                <div class="lsg-col-md-2">
+                  <input type="checkbox" id="lsg-titans" aria-label="Show Titans message?" data-addition-toggle="titans">
                 </div>
               </div>
-              <div class="form-group">
-                <label for="confidentiality" class="col-md-9">This message and its contents may be confidential. If you received this message in error, please inform the sender and delete the message. Thank you.</label>
-                <div class="col-md-2">
-                  <input type="checkbox" id="confidentiality" aria-label="Show confidentiality notice?">
+              <div class="lsg-form-group">
+                <label for="lsg-confidentiality" class="lsg-col-md-9">This message and its contents may be confidential. If you received this message in error, please inform the sender and delete the message. Thank you.</label>
+                <div class="lsg-col-md-2">
+                  <input type="checkbox" id="lsg-confidentiality" aria-label="Show confidentiality notice?" data-addition-toggle="confidentiality">
                 </div>
               </div>
-              <div class="form-group">
-                <label for="wise-statement" class="col-md-9">Lane Community College is dedicated to fostering a welcoming, inclusive, safe, and equitable (WISE) environment. We encourage open communication, constructive dialogue, and collaboration to ensure every voice is heard and respected. In alignment with our values, all who engage with the college pledge to treat others with respect, courtesy, and kindness.</label>
-                <div class="col-md-2">
-                  <input type="checkbox" id="wise-statement" aria-label="show wise statement?">
+              <div class="lsg-form-group">
+                <label for="lsg-wise-statement" class="lsg-col-md-9">Lane Community College is dedicated to fostering a welcoming, inclusive, safe, and equitable (WISE) environment. We encourage open communication, constructive dialogue, and collaboration to ensure every voice is heard and respected. In alignment with our values, all who engage with the college pledge to treat others with respect, courtesy, and kindness.</label>
+                <div class="lsg-col-md-2">
+                  <input type="checkbox" id="lsg-wise-statement" aria-label="show wise statement?" data-addition-toggle="wise-statement">
                 </div>
               </div>
             </div>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <div class="panel panel-default">
-            <h2 class="sr-only">Copy your signature from below</h2>
-            <div id="signature" class="panel-body">
+					</form>
+				</div>
+				<div class="lsg-col-md-6">
+					<div class="lsg-panel lsg-panel-default">
+						<h2 class="lsg-sr-only">Copy your signature from below</h2>
+					  <div id="lsg-signature" class="lsg-panel-body" data-signature-preview="">
               <div style="margin-top:10px;margin-bottom:10px;width:100%;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#333333;">
                 <p style="color:#000000;font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; color: rgb(33, 33, 33); display:inline-block;margin:0">
-                  <span style="font-size: 20px; font-weight: bold; color: #0b223f; display: inline;" class="field name">Your Name</span><br>
-                  <span style="display:none"><span style="color: #565656; display: inline;" class="field title"></span><br></span>
-                  <span style="display:none"><span style="color: #565656; display: inline;" class="field department"></span><br></span>
+                  <span style="font-size: 20px; font-weight: bold; color: #0b223f; display: inline;" class="lsg-field lsg-name" data-signature-field="name">Your Name</span><br>
+                  <span style="display:none" data-signature-line="title"><span style="color: #565656; display: inline;" class="lsg-field lsg-title" data-signature-field="title"></span><br></span>
+                  <span style="display:none" data-signature-line="department"><span style="color: #565656; display: inline;" class="lsg-field lsg-department" data-signature-field="department"></span><br></span>
                   <a href="http://www.lanecc.edu" style="color: #337ab7; text-decoration: none; display: inline;">Lane Community College</a><br>
-                  <span style="display:none"><span style="color: #565656; display: inline;" class="field campus"></span><br></span>
-                  <span style="display:none"><span style="color: #565656; display: inline;" class="field email"></span><br></span>
-                  <span style="display:none">Pronouns: <span style="color: #565656; display: inline;" class="field pronouns"></span><br></span>
+                  <span style="display:none" data-signature-line="campus"><span style="color: #565656; display: inline;" class="lsg-field lsg-campus" data-signature-field="campus"></span><br></span>
+                  <span style="display:none" data-signature-line="email"><span style="color: #565656; display: inline;" class="lsg-field lsg-email" data-signature-field="email"></span><br></span>
+                  <span style="display:none" data-signature-line="pronouns">Pronouns: <span style="color: #565656; display: inline;" class="lsg-field lsg-pronouns" data-signature-field="pronouns"></span><br></span>
                   
-                  <span class="phone icon" style="display:none; font-weight:bold;">O: </span>
-                  <span style="color: #565656 !important; display: inline; text-decoration:none;" class="field phone"></span>
-                  <span class="mid" style="display:none">&nbsp;</span>
-                  
-                  <span class="mobile icon" style="display:none; font-weight:bold;">M: </span>
-                  <span style="color: #565656 !important; display: inline; text-decoration:none;" class="field mobile"></span>
-                  <span class="mid2" style="display:none">&nbsp;</span>
-                  
-                  <span class="fax icon" style="display:none; font-weight:bold;">F: </span>
-                  <span style="color: #565656 !important; display: inline;text-decoration:none;" class="field fax"></span>
-                </p>
-                <table class="social" role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:5px;border-collapse:collapse;border-spacing:0;"><tr></tr></table>
-                <div class="additions" style="font-family:Helvetica,Arial,sans-serif;font-size:12.6px;line-height:20px;color:#333333;">
+                  <span data-signature-phones="" style="color:#565656;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:22px;"></span></p>
+                <table class="lsg-social" role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:5px;border-collapse:collapse;border-spacing:0;" data-signature-social=""><tr></tr></table>
+                <div class="lsg-additions" style="font-family:Helvetica,Arial,sans-serif;font-size:12.6px;line-height:20px;color:#333333;" data-signature-additions="">
                 </div>
               </div>
-            </div>
-          </div>
-          <button class="btn btn-primary" onclick="copyText('signature')">Copy to Clipboard</button><br><br>
-          <div class="alert alert-success" id="success-alert">
+					  </div>
+					</div>
+					<button class="lsg-btn lsg-btn-primary" type="button" data-copy-signature="">Copy to Clipboard</button><br><br>
+          <div class="lsg-alert lsg-alert-success" id="lsg-success-alert" data-copy-status="" role="status" aria-live="polite" aria-atomic="true" hidden="hidden">
             <p>Signature has been copied to the clipboard.</p>
           </div>
-          <p>If you choose to make additional modifications to your signature, please be sure they adhere to the <a href="https://www.lanecc.edu/mpr/logo-graphics-standards">Graphic Standards</a> of the college. Please do not include any quotes or disclaimers.</p>
-          <section aria-labelledby="gmail-instructions-heading">
-            <h2 id="gmail-instructions-heading">Add your signature to Gmail</h2>
+					<p>If you choose to make additional modifications to your signature, please be sure they adhere to the <a href="https://www.lanecc.edu/mpr/logo-graphics-standards">Graphic Standards</a> of the college. Please do not include any quotes or disclaimers.</p>
+          <section aria-labelledby="lsg-gmail-instructions-heading">
+            <h2 id="lsg-gmail-instructions-heading">Add your signature to Gmail</h2>
             <ol>
               <li>On your computer, enter your information above and review the signature preview.</li>
               <li>Click <strong>Copy to Clipboard</strong>.</li>
@@ -240,25 +231,27 @@
             <p>If the copy button does not work, select the signature in the preview, copy it with <strong>Ctrl+C</strong> or <strong>Command+C</strong>, and paste it into Gmail.</p>
             <p><a href="https://support.google.com/mail/answer/8395?hl=en&amp;co=GENIE.Platform%3DDesktop">Google's Gmail signature instructions</a></p>
           </section>
-          <section aria-labelledby="mobile-instructions-heading" class="well">
-            <h2 id="mobile-instructions-heading">Using Gmail on your phone?</h2>
+          <section aria-labelledby="lsg-mobile-instructions-heading" class="lsg-well">
+            <h2 id="lsg-mobile-instructions-heading">Using Gmail on your phone?</h2>
             <p><strong>Check your mobile signature settings.</strong> If you have not set a separate signature in the Gmail app, new messages use the signature you set up on your computer. A separate mobile signature applies to messages sent from the app and needs to be updated separately.</p>
             <p>To check the settings for your Lane account:</p>
             <ul>
-              <li><strong>Android:</strong> Open the Gmail app, tap <strong>Menu</strong>, then <strong>Settings</strong>, choose your Lane account, and tap <strong>Mobile signature</strong>.</li>
-              <li><strong>iPhone or iPad:</strong> Open the Gmail app, tap <strong>Menu</strong>, then <strong>Settings</strong>. Under <strong>Compose and Reply</strong>, tap <strong>Signature settings</strong>. Check the setting for your Lane account if you have multiple accounts.</li>
+              <li>
+<strong>Android:</strong> Open the Gmail app, tap <strong>Menu</strong>, then <strong>Settings</strong>, choose your Lane account, and tap <strong>Mobile signature</strong>.</li>
+              <li>
+<strong>iPhone or iPad:</strong> Open the Gmail app, tap <strong>Menu</strong>, then <strong>Settings</strong>. Under <strong>Compose and Reply</strong>, tap <strong>Signature settings</strong>. Check the setting for your Lane account if you have multiple accounts.</li>
             </ul>
             <p>After saving your computer signature, send yourself a new message and a reply from your phone to confirm the signature you want is included.</p>
             <p>See Google's instructions for <a href="https://support.google.com/mail/answer/8395?hl=en&amp;co=GENIE.Platform%3DAndroid">Android signatures</a> or <a href="https://support.google.com/mail/answer/8395?hl=en&amp;co=GENIE.Platform%3DiOS">iPhone and iPad signatures</a>.</p>
           </section>
           <p><strong>Problems?</strong> Please report any issues to Kyle by emailing him at <a href="mailto:schmidtk@lanecc.edu">schmidtk@lanecc.edu</a>.</p>
-        </div>
-      </div>
-    </div>
+				</div>
+			</div>
+  	</div>
 
-    <table class="hidden">
+    <template data-social-templates=""><table>
       <tr>
-        <td class="facebook" valign="top" style="padding:0 5px 0 0;vertical-align:top;font-size:0;line-height:0;" data-index=0>
+        <td class="lsg-facebook" valign="top" style="padding:0 5px 0 0;vertical-align:top;font-size:0;line-height:0;" data-index="0" data-social-icon="facebook">
           <a href="https://www.facebook.com/lanecommunitycollege" style="display:block;margin:0;padding:0;font-size:0;line-height:0;text-decoration:none;" aria-label="Visit Lane on Facebook">
             <div style="background: #3b5998;display: inline-block;position: relative;border-bottom: 0;width: 30px;box-sizing: content-box;border-radius: 3px;height: 30px;text-indent: -999em;border: 3px solid #3b5998;overflow: hidden;">
               <span style="margin-left: 18px;width: 12px;height: 30px;border: 6px solid #fff;border-radius: 6px;display: block;float: left;box-sizing: content-box;"></span>
@@ -266,39 +259,38 @@
             </div>
           </a>
         </td>
-        <td class="instagram" valign="top" style="padding:0 5px 0 0;vertical-align:top;font-size:0;line-height:0;" data-index=2>
+        <td class="lsg-instagram" valign="top" style="padding:0 5px 0 0;vertical-align:top;font-size:0;line-height:0;" data-index="2" data-social-icon="instagram">
           <a href="https://www.instagram.com/LaneTitans" style="display:block;margin:0;padding:0;font-size:0;line-height:0;text-decoration:none;" aria-label="Visit Lane on Instagram">
-            <div class="instagram-container" style="height: 36px;width: 36px;border-radius: 7px;box-sizing: content-box;background-color: #D93175;display: inline-block;">
-              <span class="before" style="float: left;height: 24px;width: 24px;box-sizing: content-box;border: 2px solid #fff;margin-top: 4px;margin-left: 4px;border-radius: 6px;">
-                <span class="viewfinder" style="display: block;height: 4px;width: 4px;box-sizing: content-box;border-radius: 50%;background-color: #fff;margin-left: 16px;margin-top: 2px;float: left;"></span>
-                <span class="lens" style="float: left;height: 8px;width: 8px;box-sizing: content-box;border-radius: 50%;border: 2px solid #fff;margin-left: 6px;"></span>
+            <div class="lsg-instagram-container" style="height: 36px;width: 36px;border-radius: 7px;box-sizing: content-box;background-color: #D93175;display: inline-block;">
+              <span class="lsg-before" style="float: left;height: 24px;width: 24px;box-sizing: content-box;border: 2px solid #fff;margin-top: 4px;margin-left: 4px;border-radius: 6px;">
+                <span class="lsg-viewfinder" style="display: block;height: 4px;width: 4px;box-sizing: content-box;border-radius: 50%;background-color: #fff;margin-left: 16px;margin-top: 2px;float: left;"></span>
+                <span class="lsg-lens" style="float: left;height: 8px;width: 8px;box-sizing: content-box;border-radius: 50%;border: 2px solid #fff;margin-left: 6px;"></span>
               </span>
             </div>
           </a>
         </td>
-        <td class="linkedin" valign="top" style="padding:0 5px 0 0;vertical-align:top;font-size:0;line-height:0;" data-index=3>
+        <td class="lsg-linkedin" valign="top" style="padding:0 5px 0 0;vertical-align:top;font-size:0;line-height:0;" data-index="3" data-social-icon="linkedin">
           <a href="https://www.linkedin.com/school/lane-community-college/" style="display:block;margin:0;padding:0;font-size:0;line-height:0;text-decoration:none;" aria-label="Visit us on LinkedIn">
-            <span class="linkedin-container" style="display:inline-block;width:36px;height:36px;margin:0;padding:0;border:0;border-radius:3px;background-color:#0077b7;color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:28px;font-weight:bold;line-height:36px;letter-spacing:-1px;text-align:center;vertical-align:top;text-decoration:none;">in</span>
+            <span class="lsg-linkedin-container" style="display:inline-block;width:36px;height:36px;margin:0;padding:0;border:0;border-radius:3px;background-color:#0077b7;color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:28px;font-weight:bold;line-height:36px;letter-spacing:-1px;text-align:center;vertical-align:top;text-decoration:none;">in</span>
           </a>
         </td>
-        <td class="youtube" valign="top" style="padding:0 5px 0 0;vertical-align:top;font-size:0;line-height:0;" data-index=4>
-          <a href="https://youtube.com/lanecommunitycollegeeugene" style="display:block;margin:0;padding:0;font-size:0;line-height:0;text-decoration:none;" aria-label="Follow Lane on YouTube">
-            <div class="youtube-container" style="background: #F00;display: inline-block;position: relative;border-bottom: 0;width: 30px;box-sizing: content-box;border-radius: 3px;height: 30px;text-indent: -999em;border: 3px solid #F00;overflow: hidden;">
-              <span class="play" style="width: 0;height: 0;border-style: solid;border-width: 11px 0 11px 17px;border-color: transparent transparent transparent #fff;margin-left: 9px;margin-top: 4px;display: block;"></span>
+        <td class="lsg-youtube" valign="top" style="padding:0 5px 0 0;vertical-align:top;font-size:0;line-height:0;" data-index="4" data-social-icon="youtube">
+          <a href="http://youtube.com/lanecommunitycollegeeugene" style="display:block;margin:0;padding:0;font-size:0;line-height:0;text-decoration:none;" aria-label="Follow Lane on YouTube">
+            <div class="lsg-youtube-container" style="background: #F00;display: inline-block;position: relative;border-bottom: 0;width: 30px;box-sizing: content-box;border-radius: 3px;height: 30px;text-indent: -999em;border: 3px solid #F00;overflow: hidden;">
+              <span class="lsg-play" style="width: 0;height: 0;border-style: solid;border-width: 11px 0 11px 17px;border-color: transparent transparent transparent #fff;margin-left: 9px;margin-top: 4px;display: block;"></span>
             </div>
           </a>  
         </td>
       </tr>
     </table>
 
-    <div class="hidden">
-      <div class="capital-campaign" data-index="-1" style="margin:12px 0;">
+    </template><template data-addition-templates=""><div class="lsg-capital-campaign" data-index="-1" style="margin:12px 0;" data-addition="capital-campaign">
         <table role="presentation" width="288" cellpadding="0" cellspacing="0" border="0" bgcolor="#073880" style="width:288px;border-collapse:collapse;border-spacing:0;background-color:#073880;">
           <tr>
             <td width="242" valign="middle" bgcolor="#073880" style="width:242px;padding:14px 8px 13px 16px;background-color:#073880;vertical-align:middle;">
               <table role="presentation" width="242" cellpadding="0" cellspacing="0" border="0" style="width:242px;border-collapse:collapse;border-spacing:0;">
                 <tr><td style="padding:0 0 8px;font-size:0;line-height:0;">
-                  <table role="presentation" width="37" cellpadding="0" cellspacing="0" border="0" style="width:37px;border-collapse:collapse;"><tr><td height="3" bgcolor="#fdb913" style="height:3px;padding:0;background-color:#fdb913;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+                  <table role="presentation" width="37" cellpadding="0" cellspacing="0" border="0" style="width:37px;border-collapse:collapse;"><tr><td height="3" bgcolor="#fdb913" style="height:3px;padding:0;background-color:#fdb913;font-size:0;line-height:0;"> </td></tr></table>
                 </td></tr>
                 <tr><td bgcolor="#073880" style="padding:0;background-color:#073880;font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:22px;font-weight:normal;letter-spacing:0.6px;color:#ffffff;"><a href="https://www.lanecc.edu/about-lane/foundation/lasting-local-lane" style="font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:22px;font-weight:normal;color:#ffffff;text-decoration:none;">A LASTING,</a></td></tr>
                 <tr><td bgcolor="#073880" style="padding:0;background-color:#073880;font-family:Arial,Helvetica,sans-serif;font-size:30px;line-height:32px;font-weight:bold;letter-spacing:0.1px;color:#fdb913;"><a href="https://www.lanecc.edu/about-lane/foundation/lasting-local-lane" style="font-family:Arial,Helvetica,sans-serif;font-size:30px;line-height:32px;font-weight:bold;color:#fdb913;text-decoration:none;">LOCAL LANE</a></td></tr>
@@ -311,21 +303,17 @@
           </tr>
         </table>
       </div>
-      <p class="eeo" data-index="0" style="margin:0">Lane is a AA/EEO/Veterans/Disabilities Employer</p>
-      <p class="employmentopps" data-index="1" style="margin:0">Employment Opportunities: <a href="https://jobs.lanecc.edu">jobs.lanecc.edu</a></p>
-      <p class="helpdesk" data-index=2 style="margin:0">Need technical support? Contact the <a href="https://www.lanecc.edu/it/helpdesk">IT Helpdesk</a> at helpdesk@lanecc.edu or call 463-4444</p>
-      <p class="tour" data-index=3 style="margin:0">Check out our <a href="https://www.lanecc.edu/tour">virtual tour!</a></p>
-      <p class="espanol" data-index=4 style="margin:0">Hablo español</p>
-      <p class="titans" data-index=5 style="margin:0; font-weight:bold">Go Titans! ⚡</p>
-      <p class="confidentiality" data-index="10" style="margin:0.5em 0">This message and its contents may be confidential. If you received this message in error, please inform the sender and delete the message. Thank you.</p>
-      <p class="wise-statement" data-index="11" style="margin:0">Lane Community College is dedicated to fostering a welcoming, inclusive, safe, and equitable (WISE) environment. We encourage open communication, constructive dialogue, and collaboration to ensure every voice is heard and respected. In alignment with our values, all who engage with the college pledge to treat others with respect, courtesy, and kindness.</p>
+      <p class="lsg-eeo" data-index="0" style="margin:0" data-addition="eeo">Lane is a AA/EEO/Veterans/Disabilities Employer</p>
+      <p class="lsg-employmentopps" data-index="1" style="margin:0" data-addition="employmentopps">Employment Opportunities: <a href="https://jobs.lanecc.edu">jobs.lanecc.edu</a></p>
+      <p class="lsg-helpdesk" data-index="2" style="margin:0" data-addition="helpdesk">Need technical support? Contact the <a href="https://www.lanecc.edu/it/helpdesk">IT Helpdesk</a> at helpdesk@lanecc.edu or call 463-4444</p>
+      <p class="lsg-tour" data-index="3" style="margin:0" data-addition="tour">Check out our <a href="https://www.lanecc.edu/tour">virtual tour!</a></p>
+      <p class="lsg-espanol" data-index="4" style="margin:0" data-addition="espanol">Hablo español</p>
+      <p class="lsg-titans" data-index="5" style="margin:0; font-weight:bold" data-addition="titans">Go Titans! ⚡</p>
+      <p class="lsg-confidentiality" data-index="10" style="margin:0.5em 0" data-addition="confidentiality">This message and its contents may be confidential. If you received this message in error, please inform the sender and delete the message. Thank you.</p>
+      <p class="lsg-wise-statement" data-index="11" style="margin:0" data-addition="wise-statement">Lane Community College is dedicated to fostering a welcoming, inclusive, safe, and equitable (WISE) environment. We encourage open communication, constructive dialogue, and collaboration to ensure every voice is heard and respected. In alignment with our values, all who engage with the college pledge to treat others with respect, courtesy, and kindness.</p>
+    </template><div class="lsg-footer"></div>
+
     </div>
-
-    <div class="footer"></div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-    <script src="sig.js"></script>
-  </body>
+<script src="sig.js" defer></script>
+</body>
 </html>

@@ -1,5 +1,6 @@
-/* Generator interface styles. Signature artwork keeps its own inline styles. */
-body {
+/* Component styles: no selectors apply outside the generator container. */
+
+.lane-signature-generator {
   margin: 0;
   background: #fff;
   color: #333;
@@ -7,16 +8,14 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
 }
-
-.container {
+.lane-signature-generator .lsg-container {
   box-sizing: border-box;
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
 }
-
-.page-header {
+.lane-signature-generator .lsg-page-header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -25,39 +24,39 @@ body {
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
 }
-
-img.logo { display: block; max-width: 100%; height: auto; }
-h1, h2, h3 { font-family: inherit; font-weight: 500; line-height: 1.2; }
-h1 { margin: 0; font-size: 36px; }
-h2 { margin: 20px 0 10px; font-size: 140%; }
-h3 { margin: 20px 0 10px; font-size: 24px; }
-p { margin: 0 0 10px; }
-a { color: #337ab7; text-decoration: underline; }
-a:hover { color: #23527c; }
-strong { font-weight: 700; }
-small { font-size: 85%; }
-sup { position: relative; top: -.5em; font-size: 75%; line-height: 0; vertical-align: baseline; }
-hr { height: 0; margin: 20px 0; border: 0; border-top: 1px solid #eee; }
-ol, ul { margin: 0 0 10px; padding-left: 26px; }
-li + li { margin-top: 6px; }
-.lead { margin-bottom: 20px; font-size: 20px; font-weight: 300; line-height: 1.4; }
-.required { text-transform: uppercase; }
-.text-danger { color: #a94442; }
-
-.row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; }
-.row > div { min-width: 0; }
-
-#siginfo { margin: 0; }
-#siginfo .form-group {
+.lane-signature-generator img.lsg-logo { display: block; max-width: 100%; height: auto; }
+.lane-signature-generator h1,
+.lane-signature-generator h2,
+.lane-signature-generator h3 { font-family: inherit; font-weight: 500; line-height: 1.2; }
+.lane-signature-generator h1 { margin: 0; font-size: 36px; }
+.lane-signature-generator h2 { margin: 20px 0 10px; font-size: 140%; }
+.lane-signature-generator h3 { margin: 20px 0 10px; font-size: 24px; }
+.lane-signature-generator p { margin: 0 0 10px; }
+.lane-signature-generator a { color: #337ab7; text-decoration: underline; }
+.lane-signature-generator a:hover { color: #23527c; }
+.lane-signature-generator strong { font-weight: 700; }
+.lane-signature-generator small { font-size: 85%; }
+.lane-signature-generator sup { position: relative; top: -.5em; font-size: 75%; line-height: 0; vertical-align: baseline; }
+.lane-signature-generator hr { height: 0; margin: 20px 0; border: 0; border-top: 1px solid #eee; }
+.lane-signature-generator ol,
+.lane-signature-generator ul { margin: 0 0 10px; padding-left: 26px; }
+.lane-signature-generator li + li { margin-top: 6px; }
+.lane-signature-generator .lsg-lead { margin-bottom: 20px; font-size: 20px; font-weight: 300; line-height: 1.4; }
+.lane-signature-generator .lsg-required { text-transform: uppercase; }
+.lane-signature-generator .lsg-text-danger { color: #a94442; }
+.lane-signature-generator .lsg-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; }
+.lane-signature-generator .lsg-row > div { min-width: 0; }
+.lane-signature-generator [data-signature-form] { margin: 0; }
+.lane-signature-generator [data-signature-form] .lsg-form-group {
   display: grid;
   grid-template-columns: minmax(110px, 1fr) minmax(0, 3fr);
   align-items: start;
   gap: 0 12px;
   margin-bottom: 15px;
 }
-#siginfo .form-group > div { min-width: 0; }
-#siginfo label { display: block; padding-top: 7px; font-weight: 700; }
-#siginfo .form-control {
+.lane-signature-generator [data-signature-form] .lsg-form-group > div { min-width: 0; }
+.lane-signature-generator [data-signature-form] label { display: block; padding-top: 7px; font-weight: 700; }
+.lane-signature-generator [data-signature-form] .lsg-form-control {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -70,18 +69,17 @@ li + li { margin-top: 6px; }
   font: inherit;
   line-height: 20px;
 }
-#siginfo .form-control:focus { border-color: #00529b; outline: 2px solid #00529b; outline-offset: 2px; }
-#siginfo input[type="checkbox"] { width: 16px; height: 16px; margin: 7px 0 0; accent-color: #00529b; }
-#siginfo input[type="checkbox"]:focus-visible, button:focus-visible, a:focus-visible {
+.lane-signature-generator [data-signature-form] .lsg-form-control:focus { border-color: #00529b; outline: 2px solid #00529b; outline-offset: 2px; }
+.lane-signature-generator [data-signature-form] input[type="checkbox"] { width: 16px; height: 16px; margin: 7px 0 0; accent-color: #00529b; }
+.lane-signature-generator [data-signature-form] input[type="checkbox"]:focus-visible,
+.lane-signature-generator button:focus-visible,
+.lane-signature-generator a:focus-visible {
   outline: 2px solid #00529b;
   outline-offset: 3px;
 }
-#siginfo .help-block { grid-column: 1 / -1; margin: 5px 0 0; color: #595959; }
-#siginfo label.error { margin: 5px 0 0; padding: 0; color: #a94442; font-weight: 400; }
-#siginfo .form-control.error { border-color: #a94442; }
-
-#siginfo .input-group { display: flex; align-items: stretch; min-height: 34px; }
-#siginfo .input-group-addon {
+.lane-signature-generator [data-signature-form] .lsg-help-block { grid-column: 1 / -1; margin: 5px 0 0; color: #595959; }
+.lane-signature-generator [data-signature-form] .lsg-input-group { display: flex; align-items: stretch; min-height: 34px; }
+.lane-signature-generator [data-signature-form] .lsg-input-group-addon {
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -93,15 +91,14 @@ li + li { margin-top: 6px; }
   border-radius: 4px 0 0 4px;
   background: #eee;
 }
-#siginfo .input-group-addon input[type="checkbox"] { margin: 0; }
-#siginfo .input-group .form-control { flex: 1 1 auto; min-width: 0; border-left: 0; border-radius: 0 4px 4px 0; }
-#siginfo .additions-group .form-group { grid-template-columns: minmax(0, 1fr) 24px; }
-#siginfo .additions-group label { padding-top: 0; }
-#siginfo .additions-group input[type="checkbox"] { margin-top: 2px; }
-
-.panel { margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; background: #fff; }
-.panel-body { padding: 15px; overflow-wrap: anywhere; }
-.btn {
+.lane-signature-generator [data-signature-form] .lsg-input-group-addon input[type="checkbox"] { margin: 0; }
+.lane-signature-generator [data-signature-form] .lsg-input-group .lsg-form-control { flex: 1 1 auto; min-width: 0; border-left: 0; border-radius: 0 4px 4px 0; }
+.lane-signature-generator [data-signature-form] .lsg-additions-group .lsg-form-group { grid-template-columns: minmax(0, 1fr) 24px; }
+.lane-signature-generator [data-signature-form] .lsg-additions-group label { padding-top: 0; }
+.lane-signature-generator [data-signature-form] .lsg-additions-group input[type="checkbox"] { margin-top: 2px; }
+.lane-signature-generator .lsg-panel { margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; background: #fff; }
+.lane-signature-generator .lsg-panel-body { padding: 15px; overflow-wrap: anywhere; }
+.lane-signature-generator .lsg-btn {
   display: inline-block;
   box-sizing: border-box;
   padding: 8px 14px;
@@ -114,19 +111,16 @@ li + li { margin-top: 6px; }
   text-align: center;
   cursor: pointer;
 }
-.btn:hover { text-decoration: underline; }
-.alert { margin-bottom: 20px; padding: 15px; border: 1px solid #c5dfb9; border-radius: 4px; }
-.alert-success { background: #e7f3e2; color: #2c602d; }
-.alert p:last-child { margin-bottom: 0; }
-#success-alert { display: none; }
-.well { margin: 20px 0; padding: 18px; border: 1px solid #ddd; border-radius: 4px; background: #f5f5f5; }
-.well h2:first-child { margin-top: 0; }
-.well p:last-child { margin-bottom: 0; }
-.footer { padding: 3em 0; }
+.lane-signature-generator .lsg-btn:hover { text-decoration: underline; }
+.lane-signature-generator .lsg-alert { margin-bottom: 20px; padding: 15px; border: 1px solid #c5dfb9; border-radius: 4px; }
+.lane-signature-generator .lsg-alert-success { background: #e7f3e2; color: #2c602d; }
+.lane-signature-generator .lsg-alert p:last-child { margin-bottom: 0; }
 
-/* Keep the template selectors used by sig.js, without depending on a framework. */
-.hidden { display: none !important; }
-.sr-only {
+.lane-signature-generator .lsg-well { margin: 20px 0; padding: 18px; border: 1px solid #ddd; border-radius: 4px; background: #f5f5f5; }
+.lane-signature-generator .lsg-well h2:first-child { margin-top: 0; }
+.lane-signature-generator .lsg-well p:last-child { margin-bottom: 0; }
+.lane-signature-generator .lsg-footer { padding: 3em 0; }
+.lane-signature-generator .lsg-sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -139,16 +133,23 @@ li + li { margin-top: 6px; }
 }
 
 @media (min-width: 992px) {
-  .row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.lane-signature-generator .lsg-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
 @media (max-width: 599px) {
-  #siginfo .form-group { grid-template-columns: minmax(0, 1fr); gap: 5px; }
-  #siginfo label { padding-top: 0; }
-  #siginfo .additions-group .form-group { grid-template-columns: minmax(0, 1fr) 24px; gap: 12px; }
-  h1 { font-size: 30px; }
-  .page-header { margin-top: 24px; }
+.lane-signature-generator [data-signature-form] .lsg-form-group { grid-template-columns: minmax(0, 1fr); gap: 5px; }
+.lane-signature-generator [data-signature-form] label { padding-top: 0; }
+.lane-signature-generator [data-signature-form] .lsg-additions-group .lsg-form-group { grid-template-columns: minmax(0, 1fr) 24px; gap: 12px; }
+.lane-signature-generator h1 { font-size: 30px; }
+.lane-signature-generator .lsg-page-header { margin-top: 24px; }
 }
 @media (max-width: 400px) {
-  .container { padding-right: 10px; padding-left: 10px; }
-  .panel-body { padding: 4px; }
+.lane-signature-generator .lsg-container { padding-right: 10px; padding-left: 10px; }
+.lane-signature-generator .lsg-panel-body { padding: 4px; }
 }
+
+/* Visibility and errors use attributes, independent of the host theme. */
+.lane-signature-generator [hidden] { display: none !important; }
+.lane-signature-generator .lsg-error-message { margin:5px 0 0; padding:0; color:#a94442; font-weight:400; font-size:14px; }
+.lane-signature-generator [data-signature-form] [aria-invalid="true"] { border-color:#a94442; }
+.lane-signature-generator [data-copy-status][data-tone="error"] { background:#fff2f0; border-color:#d9aaa4; color:#8d241b; }
+.lane-signature-generator [data-copy-signature]:disabled { opacity:.7; cursor:wait; }
